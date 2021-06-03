@@ -1,0 +1,113 @@
+header {
+    width: 100%;
+    background-color: #ECECEC;
+    color: #828282;
+}
+
+header h1{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+header p{
+font-size: 19px;
+}
+
+.success {
+    color: #000000;
+    margin-top: 100px;
+}
+
+.success h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+.success p {
+    font-size: 19px;
+}
+.success .img {   
+    border: 10px solid #ffffff;
+    box-sizing: border-box;
+    height: 340px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.success .img:first-of-type{
+    background-image: url('lib/img/jamie1.jpg');
+}
+.success .img:nth-of-type(2){
+    background-image: url('lib/img/jamie2.jpg');
+}
+.success .img:last-of-type{
+    background-image: url('lib/img/jamie3.jpg');
+}
+
+
+
+
+section {
+    margin-top: 80px;
+    width: 100%;
+background-color: #EEFCB6;
+}
+section h3{
+    font-size: 28px;
+    color: #747e48;
+}
+section button {
+    font-size: 28px;
+    color: black;
+    width: 384px;
+height: 60px;
+background: #EEFCB6;
+border: 1px solid #747E48;
+box-sizing: border-box;
+border-radius: 30px; 
+transition: 300ms;
+}
+section button:hover {
+    background-color: #CCE85C;;
+}
+
+
+
+
+.show_more {
+    width: 178px;
+height: 60px;
+border-radius: 5px;
+background-color: #c2c2c2;
+transition: 300ms;
+}
+
+.show_more:hover {
+ background-color: #ececec;
+ border: 1px solid #c2c2c2;
+}
+
+
+.top_btn{  
+    display: none;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+background-color: #C2C2C2;
+background-image: url('lib/icons/uparrow.png');
+background-position: center -5px;
+background-repeat: no-repeat;
+background-size: 80%;
+transition: 300ms;
+position: fixed;
+    right:200px;
+    bottom:240px;
+}
+
+.top_btn:hover{
+    background-color: #ececec;
+}
+.show {
+    display: block;
+}

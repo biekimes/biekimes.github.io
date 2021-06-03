@@ -1,0 +1,73 @@
+.title h1 {
+    color: #747E48;
+    font-size: 28px;
+    font-weight: bold;
+}
+.title p {
+    color: #747E48;
+    font-size: 19px;
+}
+
+section{
+    width: 100%;
+    background-color: #ECECEC;
+}
+
+.survey_container h2{
+    color: #000000;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.survey_container p{
+    color: #000000;
+    font-size: 19px;
+}
+.survey_container label{
+    color: #000000;
+    font-size: 19px;
+}
+
+.survey_container button{
+    border: 1px solid black;
+    border-radius: 20px;
+  
+    
+}
+.survey_container button:hover{
+   background-color: #c2c2c2;
+}
+.survey_container button:focus{
+    box-shadow: 0px 0px 5px 2px #747E48;
+}
+
+.survey_container .clear{
+    float: right;
+}
+
+
+#survey input {
+   display: none;
+}
+
+#survey label{
+    padding-left: 35px;
+    padding-top: 5px;
+    background-image: url('lib/icons/radio_unchecked.png');
+    background-position:5px center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+#survey input:checked+label{
+    background-image: url('lib/icons/radio_checked.png');
+}
+
+.adopt_row div .img{
+    transition: 300ms;
+}
+
+.adopt_row div .img:hover{
+    transform: scale(1.02);
+}
+

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>임시보호</title>
+    <link rel="stylesheet" href="lib/bootstrap-5.0.1-dist/css/bootstrap.css">
+    <script src="lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
+    <script src="lib/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="ypap_nav.css">
+    <link rel="stylesheet" href="foster_list.css">
+
+    <script>
+        function nameCheck() {
+            var name = $("#user");
+            if ($(name).val().length < 1) {
+                $("#nameAlert").show(100);
+                $("#nameAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(name).val().length >= 1) {
+                $("#nameAlert").hide(100);
+            }
+            return true;
+        }
+
+        function emailCheck() {
+            var email = $("#email");
+            if ($(email).val().length < 1) {
+                $("#emailHelp").hide();
+                $("#emailAlert").show(100);
+                $("#emailAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(email).val().length >= 1) {
+                $("#emailAlert").hide(100);
+            }
+            return true;
+        }
+
+        function titleCheck() {
+            let title = $("#title");
+            if ($(title).val().length < 1) {
+                $("#titleAlert").show(100);
+                $("#titleAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(title).val().length >= 1) {
+                $("#titleAlert").hide(100);
+            }
+            return true;
+        }
+
+        function msgCheck() {
+            let msg = $("#msg");
+            if ($(msg).val().length < 1) {
+                $("#msgAlert").show(100);
+                $("#msgAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(msg).val().length >= 1) {
+                $("#msgAlert").hide(100);
+            }
+            return true;
+        }
+        $(function () {
+            $(".dropdown-menu").hide();
+            $(".dropdown").mouseenter(function () {
+                $(this).children(".dropdown-menu").stop().slideDown(300);
+            });
+            $(".dropdown").mouseleave(function () {
+                $(this).children(".dropdown-menu").stop().slideUp(300);
+            });
+
+
+            $(".foster_row_hide").hide();
+            $(".show_more").click(function () {
+                $(".foster_row_hide:hidden").slice(0, 1).slideDown(300);
+                if ($(".foster_row_hide:hidden").length === 0) {
+                    $(".show_more").attr("disabled", "true");
+                }
+            });
+
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 300) {
+                    $(".top_btn").addClass("show")
+                } else {
+                    $(".top_btn").removeClass("show");
+                }
+            });
+
+            $(".top_btn").on('click', function (e) {
+                e.preventDefault();
+                $('html').animate({ scrollTop: 0 }, 100);
+            });
+
+            $(".foster_pic").mouseenter(function () {
+                $(this).children(".foster_info").fadeIn(200);
+            });
+            $(".foster_pic").mouseleave(function () {
+                $(this).children(".foster_info").fadeOut(200);
+            });
+
+            $(".contact_form").hide();
+            $("#contact").click(function () {
+                $(".contact_form").fadeIn(300);
+            });
+
+            $("#nameAlert").hide();
+            $("#emailAlert").hide();
+            $("#titleAlert").hide();
+            $("#msgAlert").hide();
+            $("form").submit(function (e) {
+                if (!nameCheck()) return false;
+                if (!emailCheck()) return false;
+                if (!titleCheck()) return false;
+                if (!msgCheck()) return false;
+            });
+
+            $(".contact_form button:nth-of-type(2)").click(function () {
+                $(".contact_form").hide(100)
+            });
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light mb-0">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Y<span>P</span>A<span>P</span></a>
+            <span class="navbar-brand">용인보호협회</span>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ms-5" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-5">
+                    <li class="nav-item mx-5">
+                        <a class="nav-link  active" aria-current="page" href="intro.html">소개</a>
+                    </li>
+                    <li class="nav-item dropdown mx-5">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            입양
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="adoption.html">입양목록</a></li>
+                            <li><a class="dropdown-item" href="adoption_success.html">성공사례</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link  active" href="foster_list.html">임보</a>
+                    </li>
+                    <li class="nav-item dropdown ms-5">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            도와주기
+                        </a>
+                        <ul class="dropdown-menu" style="width:100px" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="donate.html">후원하기</a></li>
+                            <li><a class="dropdown-item" href="volunteer.html">봉사하기</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-6">
+                    <article>
+                        <span class="mb-2"></span>
+                        <h1 class="mb-4">임시보호가 왜 필요한가</h1>
+                        <p>아직 입양자를 못 찾아서 시간이 부족해 안락사로 부터 강아지를 구할 수 있는 방법 하나는 임시보호입니다. 건강에 문제가 있어 치료받는 아이들의 경우 임시보호를 통해
+                            스트레스를
+                            덜
+                            받으면서 회복을 촉진 할 수 있습니다.</p>
+                        <p>임시보호자가 되시겠습니까?</p>
+                    </article>
+                </div>
+                <div class="col-6">
+                    <span class="mb-2"></span>
+                    <article>
+                        <h1 class="mb-4">임시 보호자로서 필요 사항</h1>
+                        <p>임시보호자로서 역할은 강아지가 건강하게지내고 반려견 생활에 익숙해지게 도와 주는 것 입니다. 임시보호 기간은 보통 1개월에서 4개월 정도 되지만 상황에 따라 기간이
+                            조정 될
+                            수 있습니다. 건강 문제가 있는 강아지가 회복하거나 입양자를 찾으시면 임시보호기간이 종료됩니다. 임시보호자가 입양자가 되는 경우도 있습니다.</p>
+                        <p>임시보호 기간에 강아지가 필요한 것은 다음과 같습니다:</p>
+                        <p>산책시켜주고 애정주기, 필요시 강아지 건강 챙겨주기, 입양이 빨리 될 수 있도록 SNS에 홍보</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container foster_list">
+        <h2>임시보호가 필요한 아이들</h2>
+        <div class="foster_row row mb-5">
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>아름</dt>
+                        <dd>2살</dt>
+                    </dl>
+
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>미라</dt>
+                        <dd>1살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">미라 소개</h3>
+                        <p>미라는 사람을 좋아하고 얌전한 1살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>미라를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>동우</dt>
+                        <dd>2살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">미라 소개</h3>
+                        <p>미라는 사람을 좋아하고 얌전한 1살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>미라를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>때굴</dt>
+                        <dd>8개월</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">미라 소개</h3>
+                        <p>미라는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>미라를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="foster_row row mb-5">
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>둔지</dt>
+                        <dd>4개월</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">둔지 소개</h3>
+                        <p>둔지는 사람을 좋아하고 얌전한 3살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>둔지를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>후니</dt>
+                        <dd>5살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>라라</dt>
+                        <dd>3살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>한미</dt>
+                        <dd>2살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="foster_row_hide  row mb-5">
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>차발로</dt>
+                        <dd>2살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">차발로 소개</h3>
+                        <p>차발로는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>차발로를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>버디</dt>
+                        <dd>2살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>정아</dt>
+                        <dd>4살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>투코</dt>
+                        <dd>5살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="foster_row_hide  row mb-5">
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>미라</dt>
+                        <dd>2살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>미라</dt>
+                        <dd>2살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>미라</dt>
+                        <dd>2살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery col-3">
+                <div class="foster_pic">
+                    <dl>
+                        <dt>미라</dt>
+                        <dd>2살</dt>
+                    </dl>
+                    <div class="foster_info p-3 m-0">
+                        <h3 class="fw-bold">아름이 소개</h3>
+                        <p>아름이는 사람을 좋아하고 얌전한 2살된 아이입니다.</p>
+                        <p>현재 심장 사상충 치료를 받는 동안 스트레스를 받지 않기 위해 임시보호를 하실 분을 찾습니다.</p>
+                        <p>아름이를 3~4 개월 봐주실 있는분이 필요합니다. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2 offset-5 ">
+                <button class="show_more btn">더보기</button>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="https://docs.google.com/forms/d/12ODRgbuENmnfMsWoMAnCTljOIkMj8OulvTJxK4hyUSc/viewform?edit_requested=true"
+        class="foster_apply btn px-3">
+        <p>임시보호
+            <strong>신청하기</strong>
+        </p>
+        <img src="lib/icons/rightarrow.png">
+    </a>
+
+    <button class="top_btn pt-4"> 위로 </button>
+
+
+    <footer class="mt-5">
+        <div class="container">
+            <p>YPAP 용인시 동물 보호 협회 기미연 경기도 용인시 처인구 모현면 오산리 193-28 죽전보호소 T. 070-1234-1234 F. 02-1234-1234 E.
+                <a href="mailto:ypap@gmail.com">ypap@gmail.com</a>
+            </p>
+
+            <div class="contact">
+                <a href="directions.html" class="link ms-2 me-5 mt-2">오시는길</a>
+                <a href="#" class="link mt-2" id="contact">문의하기</a>
+
+                <a href="https://www.instagram.com/ypap.rescue/" class="social me-2"><img src="lib/icons/instagram.png"
+                        alt=""></a>
+                <a href="https://www.facebook.com/ForBonnies/" class="social me-5"><img src="lib/icons/facebook.png"
+                        alt=""></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="contact_form p-4">
+        <h3 class="mb-0">문의하기</h3>
+        <form method="post" name="frm">
+            <label for="user" class="form-label mb-1"></label>
+            <input type="text" name="user" id="user" class="form-control" placeholder="이름을 적어주세요">
+            <div id="nameAlert" class="form-text ps-2">이름이 필요합니다.</div>
+
+            <label for="email" class="form-label mb-1 mt-3"></label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+                placeholder="이메일을 적어주세요">
+            <div id="emailHelp" class="form-text ps-2">이메일은 공개되지 않습니다.</div>
+            <div id="emailAlert" class="form-text ps-2">이메일이 필요합니다.</div>
+
+            <label for="title" class="form-label mb-1 mt-2"></label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="제목을 적어주세요">
+            <div id="titleAlert" class="form-text ps-2">제목이 필요합니다.</div>
+
+            <label for="msg" class="form-label mb-1 mt-3"></label>
+            <textarea name="msg" id="msg" rows="6" class="form-control" placeholder="문의 내용을 적어주세요"></textarea>
+            <div id="msgAlert" class="form-text ps-2">문의 내용이 필요합니다.</div>
+
+            <button type="submit" class="btn btn-lg px-4 mt-3">문의내용 제출</button>
+            <button class="btn btn-lg px-4 mt-3">닫기</button>
+        </form>
+    </div>
+</body>
+
+</html>

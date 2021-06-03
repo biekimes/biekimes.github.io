@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입양매칭 설문</title>
+    <link rel="stylesheet" href="lib/bootstrap-5.0.1-dist/css/bootstrap.css">
+    <script src="lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
+    <script src="lib/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="ypap_nav.css">
+    <link rel="stylesheet" href="survey.css">
+
+    <script>
+        function nameCheck() {
+            var name = $("#user");
+            if ($(name).val().length < 1) {
+                $("#nameAlert").show(100);
+                $("#nameAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(name).val().length >= 1) {
+                $("#nameAlert").hide(100);
+            }
+            return true;
+        }
+
+        function emailCheck() {
+            var email = $("#email");
+            if ($(email).val().length < 1) {
+                $("#emailHelp").hide();
+                $("#emailAlert").show(100);
+                $("#emailAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(email).val().length >= 1) {
+                $("#emailAlert").hide(100);
+            }
+            return true;
+        }
+
+        function titleCheck() {
+            let title = $("#title");
+            if ($(title).val().length < 1) {
+                $("#titleAlert").show(100);
+                $("#titleAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(title).val().length >= 1) {
+                $("#titleAlert").hide(100);
+            }
+            return true;
+        }
+
+        function msgCheck() {
+            let msg = $("#msg");
+            if ($(msg).val().length < 1) {
+                $("#msgAlert").show(100);
+                $("#msgAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(msg).val().length >= 1) {
+                $("#msgAlert").hide(100);
+            }
+            return true;
+        }
+
+        $(function () {
+            $(".dropdown-menu").hide();
+            $(".dropdown").mouseenter(function () {
+                $(this).children(".dropdown-menu").stop().slideDown(300);
+            });
+            $(".dropdown").mouseleave(function () {
+                $(this).children(".dropdown-menu").stop().slideUp(300);
+            });
+
+            $(".contact_form").hide();
+            $("#contact").click(function () {
+                $(".contact_form").fadeIn(300);
+            });
+
+            $("#nameAlert").hide();
+            $("#emailAlert").hide();
+            $("#titleAlert").hide();
+            $("#msgAlert").hide();
+            $("#contact_frm").submit(function (e) {
+                if (!nameCheck()) return false;
+                if (!emailCheck()) return false;
+                if (!titleCheck()) return false;
+                if (!msgCheck()) return false;
+            });
+
+            $(".contact_form button:nth-of-type(2)").click(function () {
+                $(".contact_form").hide(100)
+            });
+
+
+            $("#survey button").click(function () {
+                if ($("#uno1").is(":checked") && $("#dos1").is(":checked")) {
+                    $("#arnie").slideDown(200);
+                    $("#buddy").slideDown(200);
+                    $("#chonks").hide();
+                } else if ($("#uno2").is(":checked") && $("#dos1").is(":checked")) {
+                    $("#buddy").slideDown(200);
+                    $("#buddy").siblings().hide();
+                } else if ($("#uno2").is(":checked") && $("#dos2").is(":checked")) {
+                    $("#chonks").slideDown(200);
+                    $("#chonks").siblings().hide();
+                } else if ($("#uno1").is(":checked") && $("#dos2").is(":checked")) {
+                    $("#chonks").slideDown(200);
+                    $("#chonks").siblings().hide();
+                }
+
+
+            })
+
+            $(".clear").click(function () {
+                $(".adopt_row >div").hide();
+                $("#survey input").prop("checked", false);
+            });
+
+
+
+        })
+    </script>
+
+    <style>
+        .adopt_row>div:first-of-type .img {
+            height: 400px;
+            background-image: url('lib/fotos_de_ypap/arnie1.jpg');
+            background-size: 100%;
+        }
+
+        .adopt_row>div:nth-of-type(2) .img {
+            height: 400px;
+            background-image: url('lib/fotos_de_ypap/buddy1.jpg');
+            background-size: 100%;
+        }
+
+        .adopt_row>div:nth-of-type(3) .img {
+            height: 400px;
+            background-image: url('lib/fotos_de_ypap/chonks1.jpg');
+            background-size: 100%;
+        }
+
+        .adopt_row>div {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Y<span>P</span>A<span>P</span></a>
+            <span class="navbar-brand">용인보호협회</span>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ms-5" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-5">
+                    <li class="nav-item mx-5">
+                        <a class="nav-link  active" aria-current="page" href="intro.html">소개</a>
+                    </li>
+
+                    <li class="nav-item dropdown mx-5">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            입양
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="adoption.html">입양목록</a></li>
+                            <li><a class="dropdown-item" href="adoption_success.html">성공사례</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item mx-5">
+                        <a class="nav-link  active" href="foster_list.html">임보</a>
+                    </li>
+
+                    <li class="nav-item dropdown ms-5">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            도와주기
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">후원하기</a></li>
+                            <li><a class="dropdown-item" href="#">봉사하기</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container title py-4 mb-3">
+        <h1 class="mb-4">입양할 준비가 되셨나요?</h1>
+        <p>유기견에게 행복한 삶을 주시고 가족이 되고 싶으신데 어떤 강아지가 적합할지 고민 되시나요?</p>
+        <p>
+            밑에 설문 조사를 통해 용인보호협회에서 관리하는 강아지 중에 어떤 아이들이 본인 여건과 맞는지 확인해보세요.
+        </p>
+        <p> 매칭이 되는 강아지가 있는지 찾아 보실 수 있습니다.</p>
+    </div>
+
+    <section>
+        <div class="container survey_container py-5">
+            <h2 class="mb-4">설문 조사</h2>
+            <div id="survey">
+                <div class="row">
+                    <div class="col-6">
+                        <p>반려견을 키워보신 경험이 있습니까?</p>
+                        <input class="form-check-input" type="radio" name="uno" id="uno1">
+                        <label class="form-check-label me-5" for="uno1" unchecked>예</label>
+                        <input class="form-check-input" type="radio" name="uno" id="uno2">
+                        <label class="form-check-label" for="uno2">아니요</label>
+                    </div>
+                    <div class="col-6">
+                        <p>작은 강아지 아니면 큰 강아지가 좋습니까?</p>
+                        <input class="form-check-input" type="radio" name="dos" id="dos1">
+                        <label class="form-check-label me-5" for="dos1">큰 개</label>
+                        <input class="form-check-input" type="radio" name="dos" id="dos2">
+                        <label class="form-check-label" for="dos2">작은 개</label>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <p>현재 반려동물을 키누십니까?</p>
+                        <input class="form-check-input" type="radio" name="tres" id="tres1">
+                        <label class="form-check-label me-5" for="tres1">예</label>
+                        <input class="form-check-input" type="radio" name="tres" id="tres2">
+                        <label class="form-check-label" for="tres2">아니요</label>
+                    </div>
+                    <div class="col-6">
+                        <p>본인의 성격은 어떻습니다?</p>
+                        <input class="form-check-input" type="radio" name="cuatro" id="cuatro1">
+                        <label class="form-check-label me-5" for="cuatro1">차분함</label>
+                        <input class="form-check-input" type="radio" name="cuatro" id="cuatro2">
+                        <label class="form-check-label" for="cuatro2">활동적</label>
+                    </div>
+
+                </div>
+
+                <button class="result btn py-3 px-5 mt-5">결과 보기</button>
+                <button class="clear btn py-3 px-5 mt-5">초기화</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="result" class="container">
+
+        <div class="adopt_row row my-3">
+            <div class="col-4 text-center" id="arnie">
+                <a href="profile_arnie.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-between m-0">
+                        <dd>아르니</dd>
+                        <dd>1살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-between m-0">
+                        <dd>진돗개</dd>
+                        <dd>암컷</dd>
+                    </dl>
+                    <p class="text-start m-0">애교 부리고 사람을 잘 따르는 순둥이</p>
+                </div>
+            </div>
+            <div class="col-4 text-center" id="buddy">
+                <a href="profile_buddy.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-between m-0">
+                        <dd>버디</dd>
+                        <dd>3살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-between m-0">
+                        <dd>진돗개</dd>
+                        <dd>수컷</dd>
+                    </dl>
+                    <p class="text-start m-0">얌전하고 말 잘듣는 아이</p>
+                </div>
+            </div>
+            <div class="col-4 text-center" id="chonks">
+                <a href="profile_chonks.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-between m-0">
+                        <dd>총크스</dd>
+                        <dd>6개월</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-between m-0">
+                        <dd>진돗개</dd>
+                        <dd>수컷</dd>
+                    </dl>
+                    <p class="text-start m-0">에너지가 많고 잘먹는 강아지</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="position-relative bottom-0 mt-5">
+        <div class=" container">
+            <p>YPAP 용인시 동물 보호 협회 기미연 경기도 용인시 처인구 모현면 오산리 193-28 죽전보호소 T. 070-1234-1234 F. 02-1234-1234 E.
+                <a href="mailto:ypap@gmail.com">ypap@gmail.com</a>
+            </p>
+
+            <div class="contact">
+                <a href="directions.html" class="link ms-2 me-5 mt-2">오시는길</a>
+                <a href="#" class="link mt-2" id="contact">문의하기</a>
+
+                <a href="https://www.instagram.com/ypap.rescue/" class="social me-2"><img src="lib/icons/instagram.png"
+                        alt=""></a>
+                <a href="https://www.facebook.com/ForBonnies/" class="social me-5"><img src="lib/icons/facebook.png"
+                        alt=""></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="contact_form p-4">
+        <h3 class="mb-0">문의하기</h3>
+        <form method="post" name="frm" id="contact_frm">
+            <label for="user" class="form-label mb-1"></label>
+            <input type="text" name="user" id="user" class="form-control" placeholder="이름을 적어주세요">
+            <div id="nameAlert" class="form-text ps-2">이름이 필요합니다.</div>
+
+            <label for="email" class="form-label mb-1 mt-3"></label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+                placeholder="이메일을 적어주세요">
+            <div id="emailHelp" class="form-text ps-2">이메일은 공개되지 않습니다.</div>
+            <div id="emailAlert" class="form-text ps-2">이메일이 필요합니다.</div>
+
+            <label for="title" class="form-label mb-1 mt-2"></label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="제목을 적어주세요">
+            <div id="titleAlert" class="form-text ps-2">제목이 필요합니다.</div>
+
+            <label for="msg" class="form-label mb-1 mt-3"></label>
+            <textarea name="msg" id="msg" rows="6" class="form-control" placeholder="문의 내용을 적어주세요"></textarea>
+            <div id="msgAlert" class="form-text ps-2">문의 내용이 필요합니다.</div>
+
+            <button type="submit" class="btn btn-lg px-4 mt-3">문의내용 제출</button>
+            <button class="btn btn-lg px-4 mt-3">닫기</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

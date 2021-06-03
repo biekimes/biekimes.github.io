@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(lib/fonts/Roboto-Medium.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+nav {  
+    height: 90px;
+    border-bottom: 5px solid #CCE85C;
+    font-size: 15px;
+    margin-bottom: 70px;
+}
+
+.navbar-brand {
+    font-size: 52px;
+}
+
+.navbar-brand >span {
+    font-size: 52px;
+ color:#CCE85C;
+}
+
+nav .container > span{
+    font-size: 15px;
+}
+.nav-item{
+    width: 160px;
+}
+
+.navbar .container .collapse .dropdown .dropdown-menu{
+    display: inline-block;
+    box-sizing: border-box;
+    border: 3px solid #CCE85C;
+}
+
+.container-md {
+    width: 1100px;
+}
+
+footer {
+    width: 100%;
+    height: 184px;    
+    padding-top: 58px;  
+    background-color: #828282;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+footer p {
+    font-size: 14px;
+    width: 100%;
+    padding-bottom: 18px;
+    border-bottom: 0.5px solid #FFFFFF;
+}
+
+footer p a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+footer .contact .link {
+    text-decoration: none;
+    color: #FFFFFF;
+    float: left;
+    transition: 300ms;
+}
+
+footer .contact .link:hover {
+ color: #C2C2C2;
+}
+
+.contact .social {
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+
+.social img {
+    width: 40px;
+    height: 40px;
+    transition: 300ms;
+}
+
+.social img:hover {
+transform: translateY(-2px);
+}
+
+.contact_form { 
+    width: 700px;    
+    border: 1px solid #747E48;
+    border-radius: 15px;
+    background-color: #eefcb6f3;    
+    z-index: 1;
+
+    position: fixed;
+    top: 200px;
+    left: calc(32%);
+}
+
+.contact_form h3{
+    font-size: 24px;
+    text-align: center;
+}
+
+.contact_form label {
+    font-size: 19px;
+}
+#emailHelp {
+    font-size: 12px;
+}
+
+.contact_form button{
+    font-size: 19px;
+    border: 1px solid #747E48;
+    border-radius: 10px;
+    transition: 300ms;
+}
+.contact_form button:nth-of-type(2) {
+    float: right;       
+}
+.contact_form button:hover{  
+    text-shadow: 0px 1px 1px #747E48; 
+    background-color: #e1f398;
+}
