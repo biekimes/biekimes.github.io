@@ -97,8 +97,8 @@ font-size: 20px;
 .adopt_row:nth-of-type(3) .col-4:first-of-type .img {
     background-image: url('lib/fotos_de_ypap/paul1.jpg');
 }
-.adopt_row:nth-of-type(3) .col-4:nth-of-type(2) .img {
-    background-image: url('lib/fotos_de_ypap/woody2.jpg');
+#ari .img {
+    background-image: url('lib/fotos_de_ypap/ari1.jpg');
 }
 .adopt_row:nth-of-type(3) .col-4:nth-of-type(3) .img {
     background-image: url('lib/fotos_de_ypap/cujo1.jpg');
@@ -106,24 +106,24 @@ font-size: 20px;
 }
 
 .adopt > div:nth-of-type(4) .col-4:first-of-type .img {
-    background-image: url('lib/img/dog13.jpg');
+    background-image: url('lib/fotos_de_ypap/amaia1.jpg');
     background-position: center;
 }
 .adopt > div:nth-of-type(4) .col-4:nth-of-type(2) .img {   
-    background-image: url('lib/img/dog14.jpg');
+    background-image: url('lib/fotos_de_ypap/max1.jpg');
     background-position: center;
 }
 .adopt > div:nth-of-type(4) .col-4:nth-of-type(3) .img {
-    background-image: url('lib/img/dog15.jpg');
-    background-position: center;
+    background-image: url('lib/fotos_de_ypap/woody2.jpg');
+    background-position: 0px -100px;
 }
 
 .adopt > div:nth-of-type(5) .col-4:first-of-type .img {
-    background-image: url('lib/img/dog10.jpg');
+    background-image: url('lib/fotos_de_ypap/laddie1.jpg');
     background-position: center;
 }
 .adopt > div:nth-of-type(5) .col-4:nth-of-type(2) .img {   
-    background-image: url('lib/img/dog11.jpg');
+    background-image: url('lib/fotos_de_ypap/hatchi1.jpg');
     background-position: center;
 }
 .adopt > div:nth-of-type(5) .col-4:nth-of-type(3) .img {

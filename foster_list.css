@@ -97,8 +97,21 @@ h2{
 .foster_list  div:nth-of-type(4) .gallery:nth-of-type(3) .foster_pic{
     background-image: url('lib/img/dog4.jpg');
 }
-.foster_list  div:nth-of-type(4).gallery:nth-of-type(4) .foster_pic{
+.foster_list  div:nth-of-type(4) .gallery:nth-of-type(4) .foster_pic{
     background-image: url('lib/img/dog3.jpg');
+}
+
+.foster_list  div:nth-of-type(5) .gallery:first-of-type .foster_pic{
+    background-image: url('lib/img/dog2.jpg');
+}
+.foster_list  div:nth-of-type(5) .gallery:nth-of-type(2) .foster_pic{
+    background-image: url('lib/img/dog1.jpg');
+}
+.foster_list  div:nth-of-type(5) .gallery:nth-of-type(3) .foster_pic{
+    background-image: url('lib/img/shelterdog1.jpg');
+}
+.foster_list  div:nth-of-type(5) .gallery:nth-of-type(4) .foster_pic{
+    background-image: url('lib/img/shelterdog5.jpg');
 }
 
 

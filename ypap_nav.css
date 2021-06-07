@@ -101,8 +101,8 @@ transform: translateY(-2px);
     z-index: 1;
 
     position: fixed;
-    top: 200px;
-    left: calc(32%);
+    top: calc(15%);
+    left: calc(30% - 10px); 
 }
 
 .contact_form h3{
