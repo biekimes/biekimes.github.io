@@ -10,7 +10,7 @@
     <script src="../lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
     <script src="../lib/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="common_mobile.css">
-    <link rel="stylesheet" href="directions_mobile.css">
+    <link rel="stylesheet" href="profile_mobile.css">
 
 
     <script>
@@ -77,8 +77,9 @@
 
         $(function () {
             if ($(window).width() > 400) {
-                window.location.href = "../directions.html.html"
+                window.location.href = "../profile_buddy.html"
             }
+
 
             $(".dropdown-menu").hide();
             $(".dropdown").click(function () {
@@ -88,6 +89,23 @@
                 })
             });
 
+            $(".profile .img").mousedown(function () {
+                $(this).parents(".profile").css("border", "5px solid #747E48");
+            })
+
+            $(".hide").hide();
+            $(".show_more").click(function () {
+                $(".profile:hidden").slice(0, 1).slideDown(200);
+                if ($(".profile:hidden").length === 0) {
+                    $(this).attr("disabled", "true")
+                    $(this).text("더없음")
+                }
+            });
+
+            $(".top_btn").on('click', function (e) {
+                e.preventDefault();
+                $('html').animate({ scrollTop: 0 }, 100);
+            });
 
             $(".contact_form").hide();
             $("#contact").click(function () {
@@ -109,12 +127,36 @@
                 $(".contact_form").hide(100)
             });
 
+
         })
     </script>
+
+    <style>
+        .carousel-item {
+            background-image: url('../lib/fotos_de_ypap/buddy1.jpg');
+            background-position: 0px -50px;
+        }
+
+        .carousel-item:nth-of-type(2) {
+            background-image: url('../lib/fotos_de_ypap/buddy3.jpg');
+            background-size: 120%;
+            background-position: -20px 0px;
+        }
+
+        .carousel-item:nth-of-type(3) {
+            background-image: url('../lib/fotos_de_ypap/buddy5.jpg');
+            background-position: 0px -70px;
+        }
+
+        .carousel-item:nth-of-type(4) {
+            background-image: url('../lib/fotos_de_ypap/buddy2.jpg');
+            background-position: 0px -40px;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-sm">
             <a class="navbar-brand" href="home_mobile.html">Y<span>P</span>A<span>P</span></a>
             <span class="navbar-brand fs-6">용인보호협회</span>
@@ -147,31 +189,82 @@
         </div>
     </nav>
 
-    <header class="my-4">
-        <div class="header container-sm pb-3">
-            <h1 class="mb-1">오시는길</h1>
-            <p class="mb-1">저희 유기견 센터는 <strong>경기도 용인시</strong>와 <strong>경기도 광주시</strong> 두 장소가 있습니다.</p>
-            <p class="mb-1">입양을 원하시면 사전 문의후 방문하시면 됩니다.</p>
-            <p class="mb-1">봉사를 하고 싶으시면 봉사신청 후 해당 날짜에 참여하시면 됩니다.</p>
-        </div>
-    </header>
+    <div class="container-sm mt-3">
+        <h1 class="mb-2">버디를 소개합니다</h1>
 
-    <div class="maps container">
-        <div class="row">
-            <div class="col-12">
-                <p class="mb-1">경기 용인시 처인구 중부대로 1074-1 <br>용인시동물보호센터</p>
-                <div id="map1" style="width:100%;height:300px;"></div>
+        <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                </div>
+                <div class="carousel-item">
+                </div>
+                <div class="carousel-item">
+                </div>
+                <div class="carousel-item">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="profile_info p-3 pb-1">
+            <p>진돗개 믹스인 버디는 3살이 되어갑니다. 전 주인에게 버려져 보호소에 오게되었습니다.
+                힘든 상황을 격고도 사람을 좋아하고 다른 강아지 친구들과 잘 어울리는 온난한성격을 가지고 있습니다.
+            </p>
+            <p> 산책과 간식 먹는 것을 즐기는 버디는 입양할 주인을 기다립니다.</p>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-6">
+                <div class="details ms-0 my-2 p-2"> 수컷</div>
+            </div>
+            <div class="col-6">
+                <div class="details me-0 my-2 p-2">3살</div>
+            </div>
+            <div class="col-6">
+                <div class="details ms-0 my-2 p-2">중성화</div>
+            </div>
+            <div class="col-6">
+                <div class="details me-0 my-2 p-2">15kg</div>
+            </div>
+            <div class="col-6">
+                <div class="details ms-0 my-2 p-2">예방 접종</div>
+            </div>
+            <div class="col-6">
+                <div class="details me-0 my-2 p-2">사람을 좋아함</div>
             </div>
         </div>
-        <div class="row mt-4">
-            <div class="col-12">
-                <p class="mb-1">경기도 광주시 초월읍 지월리 713-2</p>
-                <div id="map2" style="width:100%;height:300px;"></div>
+
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <a href="https://docs.google.com/forms/d/1jG7LNo8RSAN51YD_eBYGhPjjCkZFB5DA1f9gpA9D8Eo/viewform?edit_requested=true&fbclid=IwAR2nmQYoIYW4t2BhXuqou48AHpQa9aMZ6-hM4Nyz3Qr260DO5hk6pM1yIYo"
+                    class="adopt_apply btn px-5 py-3">
+                    입양 <strong>신청 </strong>
+                    <span class="fw-bold ms-2"> 〉</span>
+                </a>
             </div>
         </div>
+
     </div>
 
-    <footer class="mt-5 py-2 px-4">
+
+    <footer class="mt-4 py-2 px-4">
         <div class="row text-center py-3 border-bottom">
             <div class="col-12">
                 YPAP 용인시 동물 보호 협회 기미연 경기도 용인시 처인구 모현면 오산리 193-28 죽전보호소
@@ -184,6 +277,7 @@
                 <a href="tel:+820313243463">+82 031-324-3463</a>
             </div>
         </div>
+
         <div class="row contact text-center py-3 border-bottom">
             <div class="col-6"> <a href="directions_mobile.html" class="link ms-2 me-5 mt-2">오시는길</a></div>
             <div class="col-6"> <a href="#" class="link mt-2" id="contact">문의하기</a></div>
@@ -199,72 +293,39 @@
                         alt=""></a>
             </div>
             <div class="col-4">
-                <a href="https://www.facebook.com/ForBonnies/" class="social "><img src="../lib/icons/TikTok.png"
-                        alt=""></a>
+                <a href="#" class="social "><img src="../lib/icons/TikTok.png" alt=""></a>
             </div>
+
         </div>
     </footer>
 
-    <div class="contact_form p-4">
-        <h3 class="mb-0">문의하기</h3>
+    <div class="contact_form p-2">
+        <h3 class="pt-2 mb-0">문의하기</h3>
         <form method="post" name="frm">
-            <label for="user" class="form-label mb-1"></label>
+            <label for="user" class="form-label "></label>
             <input type="text" name="user" id="user" class="form-control" placeholder="이름을 적어주세요">
             <div id="nameAlert" class="form-text ps-2">이름이 필요합니다.</div>
 
-            <label for="email" class="form-label mb-1 mt-3"></label>
+            <label for="email" class="form-label "></label>
             <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
                 placeholder="이메일을 적어주세요">
             <div id="emailHelp" class="form-text ps-2">이메일은 공개되지 않습니다.</div>
             <div id="emailAlert" class="form-text ps-2">이메일이 필요합니다.</div>
 
-            <label for="title" class="form-label mb-1 mt-2"></label>
+            <label for="title" class="form-label"></label>
             <input type="text" name="title" id="title" class="form-control" placeholder="제목을 적어주세요">
             <div id="titleAlert" class="form-text ps-2">제목이 필요합니다.</div>
 
-            <label for="msg" class="form-label mb-1 mt-3"></label>
+            <label for="msg" class="form-label "></label>
             <textarea name="msg" id="msg" rows="6" class="form-control" placeholder="문의 내용을 적어주세요"></textarea>
             <div id="msgAlert" class="form-text ps-2">문의 내용이 필요합니다.</div>
 
-            <button type="submit" class="btn btn-lg px-4 mt-3">문의내용 제출</button>
-            <button class="btn btn-lg px-4 mt-3">닫기</button>
+            <button type="submit" class="btn btn-lg px-4 mt-2">문의내용 제출</button>
+            <button class="btn btn-lg px-4 mt-2">닫기</button>
         </form>
     </div>
 
-    <script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c7652a913c91cd88831e9ee8ae013dfc"></script>
-    <script>
-        var mapContainer1 = document.getElementById('map1'),
-            mapOption = {
-                center: new kakao.maps.LatLng(37.24345269372481, 127.1591980846219),
-                level: 4
-            };
 
-        var map = new kakao.maps.Map(mapContainer1, mapOption);
-
-        var markerPosition = new kakao.maps.LatLng(37.24345269372481, 127.1591980846219);
-
-        var marker1 = new kakao.maps.Marker({
-            position: markerPosition
-        });
-        marker1.setMap(map);
-
-        var mapContainer2 = document.getElementById('map2'),
-            mapOption2 = {
-                center: new kakao.maps.LatLng(37.41610762759035, 127.27596422695399),
-                level: 4
-            };
-
-        var map = new kakao.maps.Map(mapContainer2, mapOption2);
-
-        var markerPosition2 = new kakao.maps.LatLng(37.41610762759035, 127.27596422695399);
-
-        var marker2 = new kakao.maps.Marker({
-            position: markerPosition2
-        });
-        marker2.setMap(map);
-
-    </script>
 </body>
 
 </html>

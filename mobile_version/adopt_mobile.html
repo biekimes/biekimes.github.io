@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../lib/bootstrap-5.0.1-dist/css/bootstrap.css">
     <script src="../lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
     <script src="../lib/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="home_mobile.css">
     <link rel="stylesheet" href="common_mobile.css">
+    <link rel="stylesheet" href="adopt_mobile.css">
 
 
     <script>
@@ -77,7 +77,7 @@
 
         $(function () {
             if ($(window).width() > 400) {
-                window.location.href = "../home.html"
+                window.location.href = "../adoption.html"
             }
 
             $(".dropdown-menu").hide();
@@ -88,7 +88,27 @@
                 })
             });
 
+            $(".profile .img").mousedown(function () {
+                $(this).parents(".profile").css({
+                    "border": "5px solid #747E48",
+                    "border-radius": "10px",
+                    "box-sizing": "border-box"
+                });
+            })
 
+            $(".hide").hide();
+            $(".show_more").click(function () {
+                $(".profile:hidden").slice(0, 1).slideDown(200);
+                if ($(".profile:hidden").length === 0) {
+                    $(this).attr("disabled", "true")
+                    $(this).text("더없음")
+                }
+            });
+
+            $(".top_btn").on('click', function (e) {
+                e.preventDefault();
+                $('html').animate({ scrollTop: 0 }, 100);
+            });
 
             $(".contact_form").hide();
             $("#contact").click(function () {
@@ -110,12 +130,13 @@
                 $(".contact_form").hide(100)
             });
 
+
         })
     </script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-sm">
             <a class="navbar-brand" href="home_mobile.html">Y<span>P</span>A<span>P</span></a>
             <span class="navbar-brand fs-6">용인보호협회</span>
@@ -139,8 +160,8 @@
                             도와주기
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="donate_mobile.html">후원하기</a></li>
-                            <li><a class="dropdown-item" href="volunteer_mobile.html">봉사하기</a></li>
+                            <li><a class="dropdown-item" href="#">후원하기</a></li>
+                            <li><a class="dropdown-item" href="#">봉사하기</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -148,159 +169,192 @@
         </div>
     </nav>
 
-    <div class="container-sm mt-3">
-        <div class="intro row mb-3">
+    <div class="container-sm pt-0">
+        <div class="intro row pt-3 mb-3">
             <div class="col-12">
-                <h2>YPAP 소개</h2>
-                <p class="mb-2">용인동물보호협회는 유기견을 돕기 위해 입양을 도와주는 단체입니다.
-                    입양 홍보 활동 뿐만 아니라 매주 봉사자들이 보호소에 모입니다.</p>
-                <p>반려견을 키우고 싶으시면 사지 말고 도움이 필요한 아이를 <strong>입양</strong>하세요.
+                <h1>입양이 필요한 아이들을 소개합니다</h1>
+                <p class="mb-2">입양이 필요한 아이들을 소개합니다. </p>
+                <p class="mb-2">
+                    사육장, 퍼피밀 및 동물학대 현장 등에서 구출된 강아지이들이 사랑을 주고받을 수 있는 가족을 찾는 것이
+                    목적입니다.
                 </p>
-            </div>
-        </div>
-
-        <div class="gallery_title row">
-            <div class="col-8">
-                <h2>입양이 필요한 아이들</h2>
-            </div>
-            <div class="col-4">
-                <a class="px-2" href="adopt_mobile.html">더보기</a>
-            </div>
-        </div>
-
-
-        <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true"
-                    aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active ">
-                    <img src="../lib/fotos_de_ypap/arnie1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption pb-1 d-md-block">
-                        <h5 class="mb-0 py-1 rounded-top">아르니</h5>
-                        <p class="rounded-bottom">1살 진돗믹스</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="../lib/fotos_de_ypap/buddy1.jpg" class="d-block w-100 " alt="...">
-                    <div class="carousel-caption  d-md-block">
-                        <h5 class="mb-0 py-1">버디</h5>
-                        <p>3살 진돗개</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="../lib/fotos_de_ypap/ari1.jpg" class="d-block w-100 " alt="...">
-                    <div class="carousel-caption  d-md-block">
-                        <h5 class="mb-0 py-1">아리</h5>
-                        <p>2살 진돗개</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="../lib/fotos_de_ypap/chonks1.jpg" class="d-block w-100 " alt="...">
-                    <div class="carousel-caption  d-md-block">
-                        <h5 class="mb-0 py-1">총크스</h5>
-                        <p>6개월 진돗개</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="../lib/fotos_de_ypap/jelly1.jpg" class="d-block w-100 " alt="...">
-                    <div class="carousel-caption  d-md-block">
-                        <h5 class="mb-0 py-1">젤리</h5>
-                        <p>4살 진돗개</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="../lib/fotos_de_ypap/kookie1.jpg" class="d-block w-100 h-100" alt="...">
-                    <div class="carousel-caption  d-md-block">
-                        <h5 class="mb-0 py-1">쿠키</h5>
-                        <p>2살 진돗개</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="banner mb-5 mt-2">
-        <article class="py-2">
-            <p class="pt-2 mb-2">입양할 준비가 되셨나요?</p>
-            <a href="survey_mobile.html"><button>설문하기</button></a>
-        </article>
-    </div>
-
-    <div class="container-sm foster_look mt-5 text-center">
-        <h2>임시보호가
-            필요한 아이들 입니다.</h2>
-        <div class="row">
-            <div class="col-6">
-                <div class="foster_img d-flex justify-content-center">
-                    <dl class="align-self-end">
-                        <dt>아름</dt>
-                        <dt>2살</dt>
-                    </dl>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="foster_img d-flex justify-content-center">
-                    <dl class="align-self-end">
-                        <dt>미리</dt>
-                        <dt>1살</dt>
-                    </dl>
-                </div>
-            </div>
-        </div>
-
-        <div class="row my-3">
-            <div class="col-6">
-                <div class="foster_img d-flex justify-content-center">
-                    <dl class="align-self-end">
-                        <dt>아름</dt>
-                        <dt>2살</dt>
-                    </dl>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="foster_img d-flex justify-content-center">
-                    <dl class="align-self-end">
-                        <dt>미리</dt>
-                        <dt>1살</dt>
-                    </dl>
-                </div>
-            </div>
-        </div>
-
-        <a href="foster_mobile.html"> <button>임시보호 신청하기 〉</button></a>
-    </div>
-
-    <div class="container-sm vol_look mt-5 px-4">
-        <div class="row p-2 mb-3">
-            <div class="col-8">
-                <p><strong>후원해주신 모든 후원금</strong>은
-                    투명하게 전액 용보협
-                    아이들을 위해 사용됩니다.</p>
-            </div>
-            <div class="col-4">
-                <a href="donate_mobile.html"><button>후원하기</button></a>
-            </div>
-        </div>
-
-        <div class="row p-2">
-            <div class="col-8">
-                <p><strong>봉사신청하기 게시판</strong>에
-                    원하시는 날자와 시간,
-                    장소로 신청하시면 됩니다.</p>
-            </div>
-            <div class="col-4">
-                <a href="volunteer_mobile.html"> <button>봉사하기</button></a>
+                <p class="mb-2">모든 강아지들은 사랑할 주인을 찾고 있습니다.</p>
             </div>
         </div>
     </div>
+
+    <header class="mb-4">
+        <div class="container survey text-center p-3">
+            <h2 class="mb-2">본인에게 적합한 강아지를 찾습니까?</h2>
+            <a href="survey.html"> <button class="py-2 px-5">설문 하기</button></a>
+        </div>
+    </header>
+
+    <div class="container adopt_list">
+        <p class="ps-2 mb-2">강아지 사진을 누르시면 프로필 페이지로 이동합니다. </p>
+
+        <div class="profile mb-4">
+            <a href="profile_mobile_arnie.html">
+                <div class="img rounded-top"></div>
+            </a>
+            <div class="adopt_info p-2 rounded-bottom">
+                <dl class="d-flex justify-content-around m-0">
+                    <dd class="fw-bold">아르니</dd>
+                    <dd>1살</dd>
+                </dl>
+                <dl class="d-flex justify-content-around m-0">
+                    <dd>진돗개</dd>
+                    <dd>암컷</dd>
+                </dl>
+                <p class="text-center m-0">애교 부리고 사람을 잘 따르는 순둥이</p>
+            </div>
+        </div>
+
+        <div class="profile mb-4">
+            <a href="profile_mobile_buddy.html">
+                <div class="img rounded-top"></div>
+            </a>
+            <div class="adopt_info p-2 rounded-bottom">
+                <dl class="d-flex justify-content-around m-0">
+                    <dd class="fw-bold">버디</dd>
+                    <dd>3살</dd>
+                </dl>
+                <dl class="d-flex justify-content-around m-0">
+                    <dd>진돗개</dd>
+                    <dd>수컷</dd>
+                </dl>
+                <p class="text-center m-0">애교 부리고 사람을 잘 따르는 순둥이</p>
+            </div>
+        </div>
+
+        <div class="profile mb-4 ">
+            <a href="profile_arnie_mobile.html">
+                <div class="img rounded-top"></div>
+            </a>
+            <div class="adopt_info p-2 rounded-bottom">
+                <dl class="d-flex justify-content-around m-0">
+                    <dd class="fw-bold">총크스</dd>
+                    <dd>6개월</dd>
+                </dl>
+                <dl class="d-flex justify-content-around m-0">
+                    <dd>진돗개</dd>
+                    <dd>수컷</dd>
+                </dl>
+                <p class="text-center m-0">애교 부리고 사람을 잘 따르는 순둥이</p>
+            </div>
+        </div>
+
+        <div class="profile mb-4 hide" id="jelly">
+            <a href="profile_arnie_mobile.html">
+                <div class="img rounded-top"></div>
+            </a>
+            <div class="adopt_info p-2 rounded-bottom">
+                <dl class="d-flex justify-content-around m-0">
+                    <dd class="fw-bold">젤리</dd>
+                    <dd>6살</dd>
+                </dl>
+                <dl class="d-flex justify-content-around m-0">
+                    <dd>진돗개</dd>
+                    <dd>수컷</dd>
+                </dl>
+                <p class="text-center m-0">애교 부리고 사람을 잘 따르는 순둥이</p>
+            </div>
+        </div>
+        <div class="profile mb-4 hide" id="kookie">
+            <a href="profile_arnie_mobile.html">
+                <div class="img rounded-top"></div>
+            </a>
+            <div class="adopt_info p-2 rounded-bottom">
+                <dl class="d-flex justify-content-around m-0">
+                    <dd class="fw-bold">쿠키</dd>
+                    <dd>2살</dd>
+                </dl>
+                <dl class="d-flex justify-content-around m-0">
+                    <dd>진돗개</dd>
+                    <dd>수컷</dd>
+                </dl>
+                <p class="text-center m-0">애교 부리고 사람을 잘 따르는 순둥이</p>
+            </div>
+        </div>
+        <div class="profile mb-4 hide" id="nike">
+            <a href="profile_arnie_mobile.html">
+                <div class="img rounded-top"></div>
+            </a>
+            <div class="adopt_info p-2 rounded-bottom">
+                <dl class="d-flex justify-content-around m-0">
+                    <dd class="fw-bold">나이키</dd>
+                    <dd>4살</dd>
+                </dl>
+                <dl class="d-flex justify-content-around m-0">
+                    <dd>라바도르</dd>
+                    <dd>수컷</dd>
+                </dl>
+                <p class="text-center m-0">애교 부리고 사람을 잘 따르는 순둥이</p>
+            </div>
+        </div>
+        <div class="profile mb-4 hide" id="cujo">
+            <a href="profile_arnie_mobile.html">
+                <div class="img rounded-top"></div>
+            </a>
+            <div class="adopt_info p-2 rounded-bottom">
+                <dl class="d-flex justify-content-around m-0">
+                    <dd class="fw-bold">쿠조</dd>
+                    <dd>2살</dd>
+                </dl>
+                <dl class="d-flex justify-content-around m-0">
+                    <dd>진도믹스</dd>
+                    <dd>수컷</dd>
+                </dl>
+                <p class="text-center m-0">애교 부리고 사람을 잘 따르는 순둥이</p>
+            </div>
+        </div>
+        <div class="profile mb-4 hide" id="amaia">
+            <a href="profile_arnie_mobile.html">
+                <div class="img rounded-top"></div>
+            </a>
+            <div class="adopt_info p-2 rounded-bottom">
+                <dl class="d-flex justify-content-around m-0">
+                    <dd class="fw-bold">아마야</dd>
+                    <dd>3살</dd>
+                </dl>
+                <dl class="d-flex justify-content-around m-0">
+                    <dd>진도믹스</dd>
+                    <dd>암컷</dd>
+                </dl>
+                <p class="text-center m-0">애교 부리고 사람을 잘 따르는 순둥이</p>
+            </div>
+        </div>
+        <div class="profile mb-4 hide" id="paul">
+            <a href="profile_arnie_mobile.html">
+                <div class="img rounded-top"></div>
+            </a>
+            <div class="adopt_info p-2 rounded-bottom">
+                <dl class="d-flex justify-content-around m-0">
+                    <dd class="fw-bold">폴</dd>
+                    <dd>3살</dd>
+                </dl>
+                <dl class="d-flex justify-content-around m-0">
+                    <dd>불독</dd>
+                    <dd>수컷</dd>
+                </dl>
+                <p class="text-center m-0">애교 부리고 사람을 잘 따르는 순둥이</p>
+            </div>
+        </div>
+
+
+
+        <div class="row mt-3">
+            <div class="col-4 offset-4 text-center ">
+                <button class="show_more btn py-2 px-4">더보기</button>
+            </div>
+            <div class="col-2 offset-2">
+                <button class="top_btn pt-3"> 위로 </button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
 
     <footer class="mt-4 py-2 px-4">
         <div class="row text-center py-3 border-bottom">

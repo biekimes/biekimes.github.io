@@ -1,0 +1,133 @@
+.intro {   
+    color: #747E48;
+    background-color: #EEFCB6;
+}
+.intro h1{
+    font-size: 22px;
+}
+.foster_info{
+    display: none;
+}
+
+.foster_row{
+    text-align: center;
+}
+
+.foster_list h2{
+    font-size: 22px;
+    font-weight: bold;
+    color: #C2C2C2;
+}
+
+.foster_pic dt {
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+}
+.foster_pic dd{
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.foster_pic {   
+    padding-top: 100px;    
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+
+    background-size: 100%;
+    background-position: center;
+}
+
+.foster_row:first-of-type .gallery:first-of-type .foster_pic{
+    background-image: url('../lib/img/dog18.jpg');
+}
+.foster_row:first-of-type .gallery:nth-of-type(2) .foster_pic{
+    background-image: url('../lib/img/dog17.jpg');
+}
+.foster_row:nth-of-type(2) .gallery:nth-of-type(1) .foster_pic{
+    background-image: url('../lib/img/dog16.jpg');
+}
+.foster_row:nth-of-type(2) .gallery:nth-of-type(2) .foster_pic{
+    background-image: url('../lib/img/dog15.jpg');
+}
+.foster_row:nth-of-type(3) .gallery:first-of-type .foster_pic{
+    background-image: url('../lib/img/dog14.jpg');
+}
+.foster_row:nth-of-type(3) .gallery:last-of-type .foster_pic{
+    background-image: url('../lib/img/dog13.jpg');
+}
+.foster_row:nth-of-type(4) .gallery:first-of-type .foster_pic{
+    background-image: url('../lib/img/dog12.jpg');
+}
+.foster_row:nth-of-type(4) .gallery:last-of-type .foster_pic{
+    background-image: url('../lib/img/dog11.jpg');
+}
+.foster_row:nth-of-type(5) .gallery:first-of-type .foster_pic{
+    background-image: url('../lib/img/dog10.jpg');
+}
+.foster_row:nth-of-type(5) .gallery:last-of-type .foster_pic{
+    background-image: url('../lib/img/dog9.jpg');
+}
+
+
+
+
+.show_more {    
+    border-radius: 5px;
+    background-color: #c2c2c2;
+}
+.show_more:focus{
+    box-shadow: 0px 0px 3px 2px #EEFCB6
+}
+
+.show_more:active {
+    background-color: #ececec;
+    border: 1px solid #c2c2c2;
+   }
+
+.top_btn{  
+ font-size: 12px;
+ border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+background-color: #C2C2C2;
+background-image: url('../lib/icons/uparrow.png');
+background-position: center -5px;
+background-repeat: no-repeat;
+background-size: 80%;
+float: right;   
+}
+
+.top_btn:active{
+    background-color: #ececec;
+}
+
+.foster_apply {
+    font-size: 20px; 
+    background-color: #CCE85C;   
+    text-align: center;       
+}
+
+.foster_apply a {
+    border: 1px solid #747E48;    
+    box-sizing: border-box;
+}
+
+.foster_apply p{
+    display: inline-block;      
+   
+  }
+
+.foster_apply img {
+    display: inline-block;
+    width: 20px;
+    height: 30px;   
+ 
+}
+
+.foster_apply a:active{
+    background-color: #EEFCB6;   
+   }
