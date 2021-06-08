@@ -1,0 +1,62 @@
+.intro {
+    color: #747E48;
+}
+
+.intro h1 {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.intro p{
+    font-size: 16px;
+}
+
+.header {
+    color: #747E48;
+    background-color: #EEFCB6;
+}
+
+
+.header span {
+    display: inline-block;
+    width: 40px;
+height: 5px;
+background-color: #747E48;
+}
+
+.header .btn{
+    width: 100%;
+    font-size: 20px;
+    color: #747E48;
+    border: 1px solid #747E48;
+box-sizing: border-box;
+border-radius: 15px;
+}
+
+.header .btn:active {
+    background-color: #CCE85C;
+}
+/* 
+.donate_items .img {    
+    width: 100%;
+    height: 300px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.donate_items .item:first-of-type .img{
+    background-image: url('../lib/img/dogcrate.jpg');   
+    background-position: center;
+} 
+
+.donate_items .item:nth-of-type(2) .img{
+    background-image: url('lib/img/dogvet.jpg');   
+    background-position: center;
+} 
+.donate_items .item:nth-of-type(3) .img{
+    background-image: url('lib/img/dogvet2.jpg');   
+    background-position: center;
+} 
+.donate_items .item:nth-of-type(4) .img{
+    background-image: url('lib/img/dogcone.jpg');   
+    background-position: center;
+}  */

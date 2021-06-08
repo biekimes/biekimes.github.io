@@ -72,8 +72,6 @@
 }
 
 
-
-
 .show_more {    
     border-radius: 5px;
     background-color: #c2c2c2;
@@ -121,13 +119,6 @@ float: right;
    
   }
 
-.foster_apply img {
-    display: inline-block;
-    width: 20px;
-    height: 30px;   
- 
-}
-
 .foster_apply a:active{
     background-color: #EEFCB6;   
-   }
+}

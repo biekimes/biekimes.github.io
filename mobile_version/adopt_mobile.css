@@ -35,14 +35,19 @@ header button:active {
 }
 
 
-.adopt_list p {
+.adopt_list > p {
     font-size: 12px;
     color: #828282;
 }
 
 .adopt_info {
+    font-size: 16px;
+    background: #EEFCB6;
+}
+
+.adopt_info p{
     font-size: 14px;
-    background-color: #EEFCB6;
+    color: #828282;
 }
 
 .img{
