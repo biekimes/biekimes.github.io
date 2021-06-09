@@ -1,4 +1,78 @@
+
+.title {
+    color: #747E48;
+}
+
 .title h1{
     font-size: 22px;
     font-weight: bold;
+    }
+
+.title p{
+    font-size: 16px;
+}
+
+.collage .collage_pic div{
+    height: 130px;    
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid #ffffff;
+}
+
+.collage .collage_pic:first-of-type > div:first-of-type{    
+    border-left: 10px solid #ffffff;
+    border-right: 5px solid #ffffff;
+    background-position: center;   
+    background-size: 140%; 
+    background-image: url('../lib/img/shelterdog1.jpg');
+}
+.collage .collage_pic:first-of-type > div:nth-of-type(2){ 
+    border-right: 10px solid #ffffff;
+    background-position: 0px -90px;
+    background-image: url('../lib/img/dogwalk1.jpg');
+}
+
+.collage .collage_pic:last-of-type > div:first-of-type{
+    border-left: 10px solid #ffffff;
+    border-right: 5px solid #ffffff;
+    background-position: center;
+    background-image: url('../lib/img/dogwalk2.jpg');
+}
+.collage .collage_pic:last-of-type > div:nth-of-type(2){    
+    border-right: 10px solid #ffffff;
+    background-size: 140%; 
+    background-position: 0px 0px;
+    background-image: url('../lib/img/dogvet2.jpg');
+}
+
+section {    
+    background-color: #EEFCB6;
+}
+
+section h2, p {
+    font-size: 16px;    
+}
+
+section .btn{
+    width: 100%;    
+    background-color: #747E48;   
+    border: none;
+    font-size: 20px;    
+    color: #ffffff; 
+}
+section .btn:active{
+    background-color:#CCE85C;
+}
+
+article{
+    color: #747E48;
+}
+
+article h2{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+article p {
+    font-size: 16px;
 }
