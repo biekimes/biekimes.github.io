@@ -5,13 +5,119 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>YPAP Mobile</title>
+=======
+    <title>용보협 모바일</title>
+>>>>>>> 9bd8f42696e9363940966e51a2158707d51c87ea
     <link rel="stylesheet" href="../lib/bootstrap-5.0.1-dist/css/bootstrap.css">
     <script src="../lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
     <script src="../lib/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="home_mobile.css">
     <link rel="stylesheet" href="common_mobile.css">
+<<<<<<< HEAD
     <script src="common_eng.js"></script>
+=======
+
+
+    <script>
+        function nameCheck() {
+            var name = $("#user");
+            if ($(name).val().length < 1) {
+                $("#nameAlert").show(100);
+                $("#nameAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(name).val().length >= 1) {
+                $("#nameAlert").hide(100);
+            }
+            return true;
+        }
+
+        function emailCheck() {
+            var email = $("#email");
+            if ($(email).val().length < 1) {
+                $("#emailHelp").hide();
+                $("#emailAlert").show(100);
+                $("#emailAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(email).val().length >= 1) {
+                $("#emailAlert").hide(100);
+            }
+            return true;
+        }
+
+        function titleCheck() {
+            let title = $("#title");
+            if ($(title).val().length < 1) {
+                $("#titleAlert").show(100);
+                $("#titleAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(title).val().length >= 1) {
+                $("#titleAlert").hide(100);
+            }
+            return true;
+        }
+
+        function msgCheck() {
+            let msg = $("#msg");
+            if ($(msg).val().length < 1) {
+                $("#msgAlert").show(100);
+                $("#msgAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(msg).val().length >= 1) {
+                $("#msgAlert").hide(100);
+            }
+            return true;
+        }
+
+        $(function () {
+            if ($(window).width() > 400) {
+                window.location.href = "../eng_version/home_eng.html"
+            }
+
+            $(".dropdown-menu").hide();
+            $(".dropdown").click(function () {
+                $(this).children(".dropdown-menu").stop().slideToggle(300);
+                $(this).not(this).click(function () {
+                    $(this).children(".dropdown-menu").slideUp()
+                })
+            });
+
+            $(".contact_form").hide();
+            $("#contact").click(function () {
+                $(".contact_form").fadeIn(300);
+            });
+
+            $("#nameAlert").hide();
+            $("#emailAlert").hide();
+            $("#titleAlert").hide();
+            $("#msgAlert").hide();
+            $("form").submit(function (e) {
+                if (!nameCheck()) return false;
+                if (!emailCheck()) return false;
+                if (!titleCheck()) return false;
+                if (!msgCheck()) return false;
+            });
+
+            $(".contact_form button:nth-of-type(2)").click(function () {
+                $(".contact_form").hide(100)
+            });
+
+        })
+    </script>
+>>>>>>> 9bd8f42696e9363940966e51a2158707d51c87ea
 </head>
 
 <body>
