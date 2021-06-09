@@ -93,6 +93,35 @@ footer .contact .link:hover {
 transform: translateY(-2px);
 }
 
+
+.flag_link {
+    transform: translateY(-15px);
+}
+
+.flag_container div{
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: 300ms;
+}
+.eng{
+    background-image: url('lib/icons/eng_flag.png');
+}
+.kor{
+    background-image: url('lib/icons/south-korea.png');
+}
+.esp{
+    background-image: url('lib/icons/esp_flag.png');
+}
+
+.flag_container div:hover{
+    transform: translateY(-2px);
+}
+
+
+
 .contact_form { 
     width: 700px;    
     border: 1px solid #747E48;

@@ -88,12 +88,13 @@ header p{
 
 .adopt_info  {
     display: inline-block;
-width: 180px;
 font-size: 20px;
+text-align: center;
 }
 
 .adopt_info dl {
-    font-weight: bold;
+    display: inline-block;
+    font-weight: bold;   
 }
 
 .adopt_row > div .img {
@@ -159,4 +160,11 @@ background-image: url('lib/fotos_de_ypap/arnie1.jpg');
 
 .adopt_row>div {
     display: none;
+}
+
+blockquote{   
+    color: red;
+    font-size: 16px;  
+    display: none;
+ 
 }

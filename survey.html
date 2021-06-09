@@ -75,6 +75,10 @@
         }
 
         $(function () {
+            if ($(window).width() <= 400) {
+                window.location.href = "mobile_version/survey_mobile.html"
+            }
+
             $(".dropdown-menu").hide();
             $(".dropdown").mouseenter(function () {
                 $(this).children(".dropdown-menu").stop().slideDown(300);
@@ -103,6 +107,7 @@
                 $(".contact_form").hide(100)
             });
 
+
             $(".result").click(function () {
                 let arnie = $("#arnie");
                 let cujo = $("#cujo");
@@ -118,11 +123,6 @@
                 let max = $("#max");
                 let laddie = $("#laddie");
                 let hatchi = $("#hatchi");
-                /*  const big = [arnie, cujo, jelly, buddy, amaia, kookie]
-                  const small = [chonks, woody, paul]
-                  const bigCalm = [cujo, buddy, kookie]
-                  const bigActive = [amaia, arnie, jelly]
-                  const smallCalm = [paul]*/
 
                 const dogs = [
                     {
@@ -223,6 +223,9 @@
                      $("#" + obj.id).slideDown()
                  });*/
 
+                if ($("input").not(":checked")) {
+                    $("blockquote").show(100);
+                }
 
                 if ($("#aloneYes").is(":checked") && $("#bigYes").is(":checked") && $("#activeYes").is(":checked")) {
                     let result = dogs.filter(function (dog) {
@@ -235,7 +238,7 @@
                     $(result).each(function (i, obj) {
                         $("#" + obj.id).slideDown()
                     });
-
+                    $("blockquote").hide(100);
                     $("header").slideDown(200);
                     $(".result").attr("disabled", "true")
                 } else if ($("#aloneYes").is(":checked") && $("#bigYes").is(":checked") && $("#activeNo").is(":checked")) {
@@ -246,10 +249,10 @@
                     }).filter(function (dog) {
                         return dog.alone === true;
                     });
-
                     $(result).each(function (i, obj) {
                         $("#" + obj.id).slideDown()
                     });
+                    $("blockquote").hide(100);
                     $("header").slideDown(200);
                     $(this).attr("disabled", "true");
                 } else if ($("#aloneYes").is(":checked") && $("#bigNo").is(":checked") && $("#activeYes").is(":checked")) {
@@ -263,7 +266,7 @@
                     $(result).each(function (i, obj) {
                         $("#" + obj.id).slideDown()
                     });
-
+                    $("blockquote").hide(100);
                     $("header").slideDown(200);
                     $(this).attr("disabled", "true");
                 } else if ($("#aloneYes").is(":checked") && $("#bigNo").is(":checked") && $("#activeNo").is(":checked")) {
@@ -277,7 +280,7 @@
                     $(result).each(function (i, obj) {
                         $("#" + obj.id).slideDown()
                     });
-
+                    $("blockquote").hide(100);
                     $("header").slideDown(200);
                     $(this).attr("disabled", "true");
                 } else if ($("#aloneNo").is(":checked") && $("#bigNo").is(":checked") && $("#activeYes").is(":checked")) {
@@ -291,7 +294,7 @@
                     $(result).each(function (i, obj) {
                         $("#" + obj.id).slideDown()
                     });
-
+                    $("blockquote").hide(100);
                     $("header").slideDown(200);
                     $(this).attr("disabled", "true");
                 } else if ($("#aloneNo").is(":checked") && $("#bigNo").is(":checked") && $("#activeNo").is(":checked")) {
@@ -305,7 +308,7 @@
                     $(result).each(function (i, obj) {
                         $("#" + obj.id).slideDown()
                     });
-
+                    $("blockquote").hide(100);
                     $("header").slideDown(200);
                     $(this).attr("disabled", "true");
                 } else if ($("#aloneNo").is(":checked") && $("#bigYes").is(":checked") && $("#activeNo").is(":checked")) {
@@ -319,7 +322,7 @@
                     $(result).each(function (i, obj) {
                         $("#" + obj.id).slideDown()
                     });
-
+                    $("blockquote").hide(100);
                     $("header").slideDown(200);
                     $(this).attr("disabled", "true");
                 } else if ($("#aloneNo").is(":checked") && $("#bigYes").is(":checked") && $("#activeYes").is(":checked")) {
@@ -333,7 +336,7 @@
                     $(result).each(function (i, obj) {
                         $("#" + obj.id).slideDown()
                     });
-
+                    $("blockquote").hide(100);
                     $("header").slideDown(200);
                     $(this).attr("disabled", "true");
                 }
@@ -345,6 +348,7 @@
                 $(".adopt_row >div").slideUp(200);
                 $("#survey input").prop("checked", false);
                 $(".result").removeAttr("disabled");
+                $("blockquote").hide(100);
             });
 
 
@@ -452,13 +456,16 @@
                         <label class="form-check-label" for="activeYes">활동적</label>
                     </div>
 
+
                 </div>
 
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-4 d-flex">
                         <button class="result btn py-3 px-5 mt-5">결과 보기</button>
+                        <blockquote class="ps-3 align-self-end">설문을 완성하세요</blockquote>
                     </div>
-                    <div class="col-2 offset-6">
+
+                    <div class="col-2 offset-2">
                         <button class="clear btn py-3 px-5 mt-5">초기화</button>
                     </div>
                 </div>
