@@ -75,6 +75,10 @@
         }
 
         $(function () {
+            if ($(window).width() <= 400) {
+                window.location.href = "mobile_version/donate_mobile.html"
+            }
+
             $(".dropdown-menu").hide();
             $(".dropdown").mouseenter(function () {
                 $(this).children(".dropdown-menu").stop().slideDown(300);

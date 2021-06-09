@@ -1,0 +1,163 @@
+
+.title h1 {
+    color: #747E48;
+    font-size: 22px;
+    font-weight: bold;
+}
+.title p {
+    color: #747E48;
+    font-size: 16px;
+}
+
+.survey_container{
+    background-color: #ECECEC;
+}
+
+.survey_container h2{
+    color: #000000;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.survey_container p{
+    color: #000000;
+    font-size: 16px;
+}
+.survey_container label{
+    color: #000000;
+    font-size: 16px;
+}
+
+.survey_container button{
+    border: 2px solid #747E48;
+    border-radius: 16px;    
+}
+.survey_container button:active{
+   background-color: #c2c2c2;
+}
+.survey_container button:focus{
+    box-shadow: 0px 0px 5px 2px #747E48;
+}
+
+#survey input {
+    display: none;
+ }
+ 
+ #survey label{
+     padding-left: 35px;
+     padding-top: 5px;
+     background-image: url('../lib/icons/radio_unchecked.png');
+     background-position:5px center;
+     background-repeat: no-repeat;
+     background-size: 20px;
+ }
+ 
+ #survey input:checked+label{
+     background-image: url('../lib/icons/radio_checked.png');
+ }
+ 
+ header h3{
+     font-size: 20px;
+     color: #747E48;
+    }
+
+header p{
+        font-size: 12px;
+        color: #c2c2c2;
+    }
+    
+.profile{     
+        background-color: #EEFCB6;
+    }
+    
+.adopt_row div .img {
+        display: inline-block;
+        width: 100%;
+        height: 300px;       
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    
+    .adopt_row div .img:active {
+        box-shadow: 0px 0px 2px 2px #747E48;
+    }
+    
+    .adopt_info {   
+        font-size: 16px; 
+        background: #EEFCB6;
+    }
+    
+    .adopt_row>div:first-of-type .img {
+        background-position: 0px -90px;
+        background-image: url('../lib/fotos_de_ypap/arnie1.jpg');
+    }
+    
+    .adopt_row>div:nth-of-type(2) .img {
+        background-position: 0px -80px;
+        background-image: url('../lib/fotos_de_ypap/buddy1.jpg');
+    }
+    
+    .adopt_row>div:nth-of-type(3) .img {
+        background-position: 0px -60px;
+        background-image: url('../lib/fotos_de_ypap/chonks1.jpg');
+    }
+    #jelly .img {
+        background-image: url('../lib/fotos_de_ypap/jelly1.jpg');
+        background-position: 0px -50px;
+    }
+    .adopt_row>div:nth-of-type(5) .img {
+        background-position: 0px -100px;
+        background-image: url('../lib/fotos_de_ypap/cujo3.jpg');
+    }
+    .adopt_row>div:nth-of-type(6) .img {   
+        background-position: 0px -90px;
+        background-image: url('../lib/fotos_de_ypap/paul1.jpg');    
+    }
+    .adopt_row>div:nth-of-type(7) .img {    
+        background-position: 0px -120px;
+        background-image: url('../lib/fotos_de_ypap/woody2.jpg');    
+    }
+    
+    .adopt_row>div:nth-of-type(8) .img {   
+        background-image: url('../lib/fotos_de_ypap/kookie1.jpg');
+        background-position: 0px -120px;
+    }
+    .adopt_row>div:nth-of-type(9) .img {   
+        background-image: url('../lib/fotos_de_ypap/amaia1.jpg');
+        background-position: 0px -50px;
+    }
+    
+    #nike .img {
+        background-image: url('../lib/fotos_de_ypap/nike1.jpg');
+        background-position: 0px -50px;
+    }
+    #max .img {
+        background-image: url('../lib/fotos_de_ypap/max1.jpg');
+        background-position: 0px -50px;
+    }
+    #ari .img {
+        background-image: url('../lib/fotos_de_ypap/ari1.jpg');
+        background-position: 0px -50px;
+    }
+    #laddie .img {
+        background-image: url('../lib/fotos_de_ypap/laddie1.jpg');
+        background-position: 0px -50px;
+    }
+    #hatchi .img {
+        background-image: url('../lib/fotos_de_ypap/hatchi3.jpg');
+        background-position: 0px -50px;
+    }
+    
+    .adopt_row>div {
+        display: none;
+    }
+    header {
+        display: none;
+    }
+    
+
+
+blockquote{   
+    color: red;
+    font-size: 14px;  
+}

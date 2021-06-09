@@ -74,6 +74,11 @@
             return true;
         }
         $(function () {
+            if ($(window).width() <= 400) {
+                window.location.href = "mobile_version/foster_mobile.html"
+            }
+
+
             $(".dropdown-menu").hide();
             $(".dropdown").mouseenter(function () {
                 $(this).children(".dropdown-menu").stop().slideDown(300);
@@ -447,7 +452,8 @@
                 </div>
             </div>
         </div>
-        <div class="foster_row_hide  row mb-5">
+
+        <div class="foster_row_hide row mb-5">
             <div class="gallery col-3">
                 <div class="foster_pic">
                     <dl>

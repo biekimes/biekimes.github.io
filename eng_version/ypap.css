@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Roboto";
-    src: url(lib/fonts/Roboto-Medium.ttf);
+    src: url(../lib/fonts/Roboto-Medium.ttf);
 }
 
 * {
@@ -85,31 +85,31 @@ nav .container > span{
 }
 
 .gallery_img:first-of-type .img{
-    background-image: url('lib/fotos_de_ypap/arnie1.jpg');
+    background-image: url('../lib/fotos_de_ypap/arnie1.jpg');
 }
 .gallery_img:nth-of-type(2) .img{
-    background-image: url('lib/fotos_de_ypap/chonks1.jpg');
+    background-image: url('../lib/fotos_de_ypap/chonks1.jpg');
 }
 .gallery_img:nth-of-type(3) .img{
-    background-image: url('lib/fotos_de_ypap/buddy1.jpg');
+    background-image: url('../lib/fotos_de_ypap/buddy1.jpg');
 }
 .gallery_img:nth-of-type(4) .img{
-    background-image: url('lib/fotos_de_ypap/jelly1.jpg');
+    background-image: url('../lib/fotos_de_ypap/jelly1.jpg');
 }
 .gallery_img:nth-of-type(5) .img{
-    background-image: url('lib/fotos_de_ypap/kookie1.jpg');
+    background-image: url('../lib/fotos_de_ypap/kookie1.jpg');
 }
 .gallery_img:nth-of-type(6) .img{
-    background-image: url('lib/fotos_de_ypap/nike1.jpg');
+    background-image: url('../lib/fotos_de_ypap/nike1.jpg');
 }
 .gallery_img:nth-of-type(7) .img{
-    background-image: url('lib/fotos_de_ypap/paul1.jpg');
+    background-image: url('../lib/fotos_de_ypap/paul1.jpg');
 }
 .gallery_img:nth-of-type(8) .img{
-    background-image: url('lib/fotos_de_ypap/woody2.jpg');
+    background-image: url('../lib/fotos_de_ypap/woody2.jpg');
 }
 .gallery_img:nth-of-type(9) .img{
-    background-image: url('lib/fotos_de_ypap/cujo1.jpg');
+    background-image: url('../lib/fotos_de_ypap/cujo1.jpg');
 }
 
 
@@ -121,7 +121,7 @@ nav .container > span{
 .banner {
     margin-top: 86px;   
     height: 177px;
-    background-image: url('lib/img/dogbanner2.jpg');
+    background-image: url('../lib/img/dogbanner2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 150px -350px;
@@ -199,7 +199,7 @@ nav .container > span{
     margin-left: 150px;
 }
 .fosters .img {
-    background-image: url('lib/img/dog18.jpg');
+    background-image: url('../lib/img/dog18.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -212,10 +212,10 @@ nav .container > span{
 }
 
 .fosters .col-4:nth-of-type(2) .img {
-    background-image: url('lib/img/dog17.jpg');
+    background-image: url('../lib/img/dog17.jpg');
 }
 .fosters .col-4:nth-of-type(3) .img {
-    background-image: url('lib/img/dog16.jpg');
+    background-image: url('../lib/img/dog16.jpg');
 }
 
 .vol_look{    
@@ -313,13 +313,13 @@ transform: translateY(-2px);
     transition: 300ms;
 }
 .eng{
-    background-image: url('lib/icons/eng_flag.png');
+    background-image: url('../lib/icons/eng_flag.png');
 }
 .kor{
-    background-image: url('lib/icons/south-korea.png');
+    background-image: url('../lib/icons/south-korea.png');
 }
 .esp{
-    background-image: url('lib/icons/esp_flag.png');
+    background-image: url('../lib/icons/esp_flag.png');
 }
 
 .flag_container div:hover{

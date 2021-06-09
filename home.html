@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>버디</title>
+    <title>YPAP Home</title>
     <link rel="stylesheet" href="lib/bootstrap-5.0.1-dist/css/bootstrap.css">
     <script src="lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
     <script src="lib/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="ypap_nav.css">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="ypap.css">
 
     <script>
         function nameCheck() {
@@ -76,7 +75,7 @@
 
         $(function () {
             if ($(window).width() <= 400) {
-                window.location.href = "mobile_version/profile_mobile_buddy.html"
+                window.location.href = "mobile_version/home_mobile.html"
             }
 
             $(".dropdown-menu").hide();
@@ -87,6 +86,17 @@
                 $(this).children(".dropdown-menu").stop().slideUp(300);
             });
 
+            var max = 8;
+            var width = 220;
+            var index = 0;
+            var sw = 1;
+            var flag = setInterval(function () {
+                index += sw;
+                $(".gallery").animate(
+                    { "margin-left": (width * -1) * index + "px" }, 2000);
+                if (index == max - 1 || index == 0)
+                    sw = -sw;//
+            }, 4000);
 
             $(".contact_form").hide();
             $("#contact").click(function () {
@@ -110,32 +120,10 @@
 
         })
     </script>
-
-    <style>
-        .profile_img {
-            background-image: url('lib/fotos_de_ypap/buddy1.jpg');
-            background-position: 0px -160px;
-        }
-
-        .carousel-item {
-            background-image: url('lib/fotos_de_ypap/buddy2.jpg');
-            background-position: 0px -450px;
-        }
-
-        .carousel-item:nth-of-type(2) {
-            background-image: url('lib/fotos_de_ypap/buddy3.jpg');
-            background-position: 0px -50px;
-        }
-
-        .carousel-item:nth-of-type(3) {
-            background-image: url('lib/fotos_de_ypap/buddy5.jpg');
-            background-position: 0px -400px;
-        }
-    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light mb-0">
+    <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container">
             <a class="navbar-brand" href="home.html">Y<span>P</span>A<span>P</span></a>
             <span class="navbar-brand">용인보호협회</span>
@@ -149,6 +137,7 @@
                     <li class="nav-item mx-5">
                         <a class="nav-link  active" aria-current="page" href="intro.html">소개</a>
                     </li>
+
                     <li class="nav-item dropdown mx-5">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -159,9 +148,11 @@
                             <li><a class="dropdown-item" href="adoption_success.html">성공사례</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item mx-5">
                         <a class="nav-link  active" href="foster_list.html">임보</a>
                     </li>
+
                     <li class="nav-item dropdown ms-5">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -177,98 +168,206 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
-        <h1 class="mb-4">버디를 소개합니다</h1>
-        <div class="row">
-            <div class="col-6">
-                <div class="profile_info p-3">
-                    <p>진돗개 믹스인 버디는 3살이 되어갑니다. 전 주인에게 버려져 보호소에 오게되었습니다.
-                        힘든 상황을 격고도 사람을 좋아하고 다른 강아지 친구들과 잘 어울리는 온난한성격을 가지고 있습니다.
-                    </p>
-                    <p> 산책과 간식 먹는 것을 즐기는 버디는 입양할 주인을 기다립니다.</p>
-                </div>
-
-                <div class="row mt-2">
-                    <div class="col-6">
-                        <div class="details ms-0 my-2 p-2"> 수컷</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="details me-0 my-2 p-2">3살</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="details ms-0 my-2 p-2">중성화</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="details me-0 my-2 p-2">15kg</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="details ms-0 my-2 p-2">예방 접종</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="details me-0 my-2 p-2">사람을 좋아함</div>
-                    </div>
-                </div>
+    <div class="container-md">
+        <div class="gallery_title row mb-2">
+            <div class="col-4">
+                <h2>입양이 필요한 아이들</h2>
             </div>
+            <div class="col-1 offset-7 pt-3">
+                <a href="adoption.html">더보기</a>
 
-            <div class="col-6">
-                <div class="profile_img"></div>
             </div>
         </div>
-
+        <div class="gallery d-flex justify-content-between">
+            <div class="gallery_img">
+                <div class="img"></div>
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">아르니</dt>
+                    <dd class="d-inline">1살</dd>
+                </dl>
+            </div>
+            <div class="gallery_img ">
+                <div class="img"></div>
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">총크스</dt>
+                    <dd class="d-inline">6개월</dd>
+                </dl>
+            </div>
+            <div class="gallery_img">
+                <div class="img"></div>
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">버디</dt>
+                    <dd class="d-inline">3살</dd>
+                </dl>
+            </div>
+            <div class="gallery_img ">
+                <div class="img"></div>
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">젤리</dt>
+                    <dd class="d-inline">6살</dd>
+                </dl>
+            </div>
+            <div class="gallery_img ">
+                <div class="img"></div>
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">쿠키</dt>
+                    <dd class="d-inline">2살</dd>
+                </dl>
+            </div>
+            <div class="gallery_img ">
+                <div class="img"></div>
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">나이키</dt>
+                    <dd class="d-inline">4살</dd>
+                </dl>
+            </div>
+            <div class="gallery_img ">
+                <div class="img"></div>
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">폴</dt>
+                    <dd class="d-inline">2살</dd>
+                </dl>
+            </div>
+            <div class="gallery_img ">
+                <div class="img"></div>
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">우디</dt>
+                    <dd class="d-inline">4개월</dd>
+                </dl>
+            </div>
+            <div class="gallery_img ">
+                <div class="img"></div>
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">쿠조</dt>
+                    <dd class="d-inline">2살</dd>
+                </dl>
+            </div>
+            <div class="gallery_img ">
+                <img src="lib/img/dog10.jpg" alt="">
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">아리</dt>
+                    <dd class="d-inline">2살</dd>
+                </dl>
+            </div>
+            <div class="gallery_img ">
+                <img src="lib/img/dog11.jpg" alt="">
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">바니</dt>
+                    <dd class="d-inline">5개월</dd>
+                </dl>
+            </div>
+            <div class="gallery_img ">
+                <img src="lib/img/dog12.jpg" alt="">
+                <dl class="d-flex justify-content-between mt-2">
+                    <dt class="d-inline">겨자</dt>
+                    <dd class="d-inline">1살</dd>
+                </dl>
+            </div>
+        </div>
     </div>
 
-    <div class="container-md mt-4">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                </div>
-                <div class="carousel-item">
-                </div>
-                <div class="carousel-item">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <div class="container">
+        <div class="banner">
+            <article>
+                <p class="mb-1">입양할 준비가 되셨나요?</p>
+                <p>행복스럽고 곳으로 목숨을 뿐이다. 새 이것을 내는 쓸쓸하랴?<br>
+                    인간의 무한한 스며들어 때문이다.</p>
+            </article>
+
+            <a href="survey.html"><button>설문하기</button></a>
         </div>
 
-        <div class="row mt-5">
-            <div class="col-12 text-center">
-                <a href="https://docs.google.com/forms/d/1jG7LNo8RSAN51YD_eBYGhPjjCkZFB5DA1f9gpA9D8Eo/viewform?edit_requested=true&fbclid=IwAR2nmQYoIYW4t2BhXuqou48AHpQa9aMZ6-hM4Nyz3Qr260DO5hk6pM1yIYo"
-                    class="adopt_apply btn p-4">
-                    입양 <strong>신청 </strong>
-                    <span class="fw-bold float-end"> 〉</span>
-                </a>
+        <div class="container-md foster_look">
+            <section>
+                <h2 class="mb-4">임시보호가
+                    필요한 아이들 입니다.</h2>
+                <a href="foster_list.html"> <button>임시보호 신청하기 〉</button></a>
+            </section>
+
+            <section class="fosters">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="img">
+                            <dl>
+                                <dt>아름</dt>
+                                <dt>2살</dt>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="img">
+                            <dl>
+                                <dt>미리</dt>
+                                <dt>1살</dt>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="img">
+                            <dl>
+                                <dt>동우</dt>
+                                <dt>2살</dt>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="container-md vol_look">
+            <div class="row">
+                <div class="col-6">
+                    <section>
+                        <p><strong>후원해주신 모든 후원금</strong>은
+                            투명하게 전액 용보협
+                            아이들을 위해 사용됩니다.</p>
+                        <a href="donate.html"><button>후원하기</button></a>
+                    </section>
+                </div>
+                <div class="col-6">
+                    <section>
+                        <p><strong>봉사신청하기 게시판</strong>에
+                            원하시는 날자와 시간,
+                            장소로 신청하시면 됩니다.</p>
+                        <a href="volunteer.html"> <button>봉사하기</button></a>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
 
 
-    <footer class="mt-5">
+
+
+    <footer>
         <div class="container">
-            <p>YPAP 용인시 동물 보호 협회 기미연 경기도 용인시 처인구 모현면 오산리 193-28 죽전보호소
-                T. 070-1234-1234 F. 02-1234-1234 E.
-                <a href="mailto:ypap@gmail.com">ypap@gmail.com</a>
-            </p>
+            <div class="row border-bottom pb-0">
+                <div class="col-9">
+                    <p>YPAP 용인시 동물 보호 협회 기미연 경기도 용인시 처인구 모현면 오산리 193-28 죽전보호소 T. 070-1234-1234 F. 02-1234-1234 E.
+                        <a href="mailto:ypap@gmail.com">ypap@gmail.com</a>
+                    </p>
+                </div>
 
-            <div class="contact">
+                <div class="col-3 flag_container d-flex justify-content-end">
+                    <a href="home.html" class="flag_link me-4">
+                        <div class="kor"></div>
+                    </a>
+
+                    <a href="eng_version/home_eng.html" class="flag_link me-4">
+                        <div class="eng"></div>
+                    </a>
+
+                    <a href="#" class="flag_link me-2">
+                        <div class="esp"></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact mt-3">
                 <a href="directions.html" class="link ms-2 me-5 mt-2">오시는길</a>
                 <a href="#" class="link mt-2" id="contact">문의하기</a>
+                <!-- <a class="link mt-2 ms-5" id="mobile_link" href="./mobile_version/home_mobile.html">모바일으로 보기</a> -->
 
                 <a href="https://www.instagram.com/ypap.rescue/" class="social me-2"><img src="lib/icons/instagram.png"
                         alt=""></a>
@@ -303,6 +402,7 @@
             <button class="btn btn-lg px-4 mt-3">닫기</button>
         </form>
     </div>
+
 
 </body>
 

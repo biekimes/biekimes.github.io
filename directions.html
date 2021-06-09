@@ -11,6 +11,8 @@
     <script src="lib/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="ypap.css">
     <link rel="stylesheet" href="directions.css">
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c7652a913c91cd88831e9ee8ae013dfc"></script>
 
     <script>
         function nameCheck() {
@@ -75,6 +77,11 @@
         }
 
         $(function () {
+            if ($(window).width() <= 400) {
+                window.location.href = "mobile_version/directions_mobile.html"
+            }
+
+
             $(".dropdown-menu").hide();
             $(".dropdown").mouseenter(function () {
                 $(this).children(".dropdown-menu").stop().slideDown(300);
@@ -215,8 +222,7 @@
         </form>
     </div>
 
-    <script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c7652a913c91cd88831e9ee8ae013dfc"></script>
+
     <script>
         var mapContainer1 = document.getElementById('map1'),
             mapOption = {
