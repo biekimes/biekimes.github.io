@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>보호소 오시는길</title>
-    <link rel="stylesheet" href="lib/bootstrap-5.0.1-dist/css/bootstrap.css">
-    <script src="lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
-    <script src="lib/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="ypap.css">
-    <link rel="stylesheet" href="directions.css">
+    <title>용보협 모바일</title>
+    <link rel="stylesheet" href="../lib/bootstrap-5.0.1-dist/css/bootstrap.css">
+    <script src="../lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
+    <script src="../lib/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="common_mobile.css">
+    <link rel="stylesheet" href="directions_mobile.css">
+
 
     <script>
         function nameCheck() {
@@ -75,18 +76,18 @@
         }
 
         $(function () {
-            if ($(window).width() <= 400) {
-                window.location.href = "mobile_version/directions_mobile.html"
+            if ($(window).width() > 400) {
+                window.location.href = "../directions.html.html"
             }
 
-
             $(".dropdown-menu").hide();
-            $(".dropdown").mouseenter(function () {
-                $(this).children(".dropdown-menu").stop().slideDown(300);
+            $(".dropdown").click(function () {
+                $(this).children(".dropdown-menu").stop().slideToggle(300);
+                $(this).not(this).click(function () {
+                    $(this).children(".dropdown-menu").slideUp()
+                })
             });
-            $(".dropdown").mouseleave(function () {
-                $(this).children(".dropdown-menu").stop().slideUp(300);
-            });
+
 
             $(".contact_form").hide();
             $("#contact").click(function () {
@@ -107,46 +108,38 @@
             $(".contact_form button:nth-of-type(2)").click(function () {
                 $(".contact_form").hide(100)
             });
+
         })
     </script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container">
-            <a class="navbar-brand" href="home.html">Y<span>P</span>A<span>P</span></a>
-            <span class="navbar-brand">용인보호협회</span>
+        <div class="container-sm">
+            <a class="navbar-brand" href="home_mobile.html">Y<span>P</span>A<span>P</span></a>
+            <span class="navbar-brand fs-6">용인보호협회</span>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse ms-5" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-5">
-                    <li class="nav-item mx-5">
-                        <a class="nav-link  active" aria-current="page" href="intro.html">소개</a>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item ">
+                        <a class="nav-link  active" href="adopt_mobile.html">입양</a>
                     </li>
-                    <li class="nav-item dropdown mx-5">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            입양
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="adoption.html">입양목록</a></li>
-                            <li><a class="dropdown-item" href="adoption_success.html">성공사례</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item mx-5">
+                    <li class="nav-item ">
                         <a class="nav-link  active" href="foster_list.html">임보</a>
                     </li>
-                    <li class="nav-item dropdown ms-5">
+
+                    <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             도와주기
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="donate.html">후원하기</a></li>
-                            <li><a class="dropdown-item" href="volunteer.html">봉사하기</a></li>
+                            <li><a class="dropdown-item" href="#">후원하기</a></li>
+                            <li><a class="dropdown-item" href="#">봉사하기</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -154,41 +147,59 @@
         </div>
     </nav>
 
-    <header class="my-5 pb-5">
-        <div class="container">
-            <h1 class="mb-4">오시는길</h1>
-            <p>저희 유기견 센터는 <strong>경기도 용인시</strong>와 <strong>경기도 광주시</strong> 두 장소가 있습니다.</p>
-            <p>입양을 원하시면 사전 문의후 방문하시면 됩니다.</p>
-            <p>봉사를 하고 싶으시면 봉사신청 후 해당 날짜에 참여하시면 됩니다.</p>
+    <header class="my-4">
+        <div class="header container-sm pb-3">
+            <h1 class="mb-1">오시는길</h1>
+            <p class="mb-1">저희 유기견 센터는 <strong>경기도 용인시</strong>와 <strong>경기도 광주시</strong> 두 장소가 있습니다.</p>
+            <p class="mb-1">입양을 원하시면 사전 문의후 방문하시면 됩니다.</p>
+            <p class="mb-1">봉사를 하고 싶으시면 봉사신청 후 해당 날짜에 참여하시면 됩니다.</p>
         </div>
     </header>
 
-    <div class="maps container pt-2">
+    <div class="maps container">
         <div class="row">
-            <div class="col-6">
-                <p>경기 용인시 처인구 중부대로 1074-1 용인시동물보호센터</p>
-                <div id="map1" style="width:100%;height:550px;"></div>
+            <div class="col-12">
+                <p class="mb-1">경기 용인시 처인구 중부대로 1074-1 <br>용인시동물보호센터</p>
+                <div id="map1" style="width:100%;height:300px;"></div>
             </div>
-            <div class="col-6">
-                <p>경기도 광주시 초월읍 지월리 713-2</p>
-                <div id="map2" style="width:100%;height:550px;"></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <p class="mb-1">경기도 광주시 초월읍 지월리 713-2</p>
+                <div id="map2" style="width:100%;height:300px;"></div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>YPAP 용인시 동물 보호 협회 기미연 경기 용인시 처인구 중부대로 1074-1 용인시동물보호센터 T. 070-1234-1234 F. 02-1234-1234 E.
+    <footer class="mt-5 py-2 px-4">
+        <div class="row text-center py-3 border-bottom">
+            <div class="col-12">
+                YPAP 용인시 동물 보호 협회 기미연 경기도 용인시 처인구 모현면 오산리 193-28 죽전보호소
                 <a href="mailto:ypap@gmail.com">ypap@gmail.com</a>
-            </p>
+            </div>
+        </div>
 
-            <div class="contact">
-                <a href="directions.html" class="link ms-2 me-5 mt-2">오시는길</a>
-                <a href="#" class="link mt-2" id="contact">문의하기</a>
+        <div class="row text-center py-3 border-bottom">
+            <div class="col-12">
+                <a href="tel:+820313243463">+82 031-324-3463</a>
+            </div>
+        </div>
+        <div class="row contact text-center py-3 border-bottom">
+            <div class="col-6"> <a href="directions_mobile.html" class="link ms-2 me-5 mt-2">오시는길</a></div>
+            <div class="col-6"> <a href="#" class="link mt-2" id="contact">문의하기</a></div>
+        </div>
 
-                <a href="https://www.instagram.com/ypap.rescue/" class="social me-2"><img src="lib/icons/instagram.png"
+        <div class="row contact text-center pt-3 pb-2">
+            <div class="col-4">
+                <a href="https://www.instagram.com/ypap.rescue/" class="social"><img src="../lib/icons/instagram.png"
                         alt=""></a>
-                <a href="https://www.facebook.com/ForBonnies/" class="social me-5"><img src="lib/icons/facebook.png"
+            </div>
+            <div class="col-4">
+                <a href="https://www.facebook.com/ForBonnies/" class="social "><img src="../lib/icons/facebook.png"
+                        alt=""></a>
+            </div>
+            <div class="col-4">
+                <a href="https://www.facebook.com/ForBonnies/" class="social "><img src="../lib/icons/TikTok.png"
                         alt=""></a>
             </div>
         </div>

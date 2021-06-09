@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>용보협 모바일</title>
+    <link rel="stylesheet" href="../lib/bootstrap-5.0.1-dist/css/bootstrap.css">
+    <script src="../lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
+    <script src="../lib/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="survey_mobile.css">
+    <link rel="stylesheet" href="common_mobile.css">
+
+
+    <script>
+        function nameCheck() {
+            var name = $("#user");
+            if ($(name).val().length < 1) {
+                $("#nameAlert").show(100);
+                $("#nameAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(name).val().length >= 1) {
+                $("#nameAlert").hide(100);
+            }
+            return true;
+        }
+
+        function emailCheck() {
+            var email = $("#email");
+            if ($(email).val().length < 1) {
+                $("#emailHelp").hide();
+                $("#emailAlert").show(100);
+                $("#emailAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(email).val().length >= 1) {
+                $("#emailAlert").hide(100);
+            }
+            return true;
+        }
+
+        function titleCheck() {
+            let title = $("#title");
+            if ($(title).val().length < 1) {
+                $("#titleAlert").show(100);
+                $("#titleAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(title).val().length >= 1) {
+                $("#titleAlert").hide(100);
+            }
+            return true;
+        }
+
+        function msgCheck() {
+            let msg = $("#msg");
+            if ($(msg).val().length < 1) {
+                $("#msgAlert").show(100);
+                $("#msgAlert").css({
+                    "color": "red",
+                    "font-size": "12px"
+                });
+                return false;
+            } else if ($(msg).val().length >= 1) {
+                $("#msgAlert").hide(100);
+            }
+            return true;
+        }
+
+        $(function () {
+            if ($(window).width() > 400) {
+                window.location.href = "../survey.html"
+            }
+
+            $(".dropdown-menu").hide();
+            $(".dropdown").click(function () {
+                $(this).children(".dropdown-menu").stop().slideToggle(300);
+                $(this).not(this).click(function () {
+                    $(this).children(".dropdown-menu").slideUp()
+                })
+            });
+
+            $(".contact_form").hide();
+            $("#contact").click(function () {
+                $(".contact_form").fadeIn(300);
+            });
+
+            $("#nameAlert").hide();
+            $("#emailAlert").hide();
+            $("#titleAlert").hide();
+            $("#msgAlert").hide();
+            $("form").submit(function (e) {
+                if (!nameCheck()) return false;
+                if (!emailCheck()) return false;
+                if (!titleCheck()) return false;
+                if (!msgCheck()) return false;
+            });
+
+            $(".contact_form button:nth-of-type(2)").click(function () {
+                $(".contact_form").hide(100)
+            });
+
+            $("blockquote").hide();
+            $(".result").click(function () {
+                let arnie = $("#arnie");
+                let cujo = $("#cujo");
+                let jelly = $("#jelly");
+                let buddy = $("#buddy");
+                let chonks = $("#chonks");
+                let woody = $("#woody");
+                let paul = $("#paul");
+                let kookie = $("#kookie");
+                let amaia = $("#amaia");
+                let nike = $("#nike");
+                let ari = $("#ari");
+                let max = $("#max");
+                let laddie = $("#laddie");
+                let hatchi = $("#hatchi");
+
+                const dogs = [
+                    {
+                        id: "arnie",
+                        size: 2,
+                        calm: false,
+                        alone: false,
+                    },
+                    {
+                        id: "cujo",
+                        size: 2,
+                        calm: true,
+                        alone: true,
+                    },
+                    {
+                        id: "woody",
+                        size: 1,
+                        calm: false,
+                        alone: false,
+                    },
+                    {
+                        id: "jelly",
+                        size: 2,
+                        calm: false,
+                        alone: true,
+                    },
+                    {
+                        id: "buddy",
+                        size: 2,
+                        calm: true,
+                        alone: true
+                    },
+                    {
+                        id: "paul",
+                        size: 1,
+                        calm: true,
+                        alone: true
+                    },
+                    {
+                        id: "chonks",
+                        size: 1,
+                        calm: false,
+                        alone: true
+                    },
+                    {
+                        id: "kookie",
+                        size: 2,
+                        calm: true,
+                        alone: false
+                    },
+                    {
+                        id: "amaia",
+                        size: 2,
+                        calm: false,
+                        alone: true
+                    },
+                    {
+                        id: "nike",
+                        size: 2,
+                        calm: false,
+                        alone: true
+                    },
+                    {
+                        id: "ari",
+                        size: 1,
+                        calm: true,
+                        alone: true
+                    },
+                    {
+                        id: "max",
+                        size: 2,
+                        calm: false,
+                        alone: false
+                    },
+                    {
+                        id: "laddie",
+                        size: 2,
+                        calm: false,
+                        alone: false
+                    },
+                    {
+                        id: "hatchi",
+                        size: 2,
+                        calm: true,
+                        alone: true
+                    }
+                ]
+
+                //   function surveyCheck() {
+                //      $("blockquote").show(100);
+                //  }
+                if ($("input").not(":checked")) {
+                    $("blockquote").show(100);
+                    //surveyCheck();
+                }
+
+                if ($("#aloneYes").is(":checked") && $("#bigYes").is(":checked") && $("#activeYes").is(":checked")) {
+                    let result = dogs.filter(function (dog) {
+                        return dog.size > 1;
+                    }).filter(function (dog) {
+                        return dog.calm === false;
+                    }).filter(function (dog) {
+                        return dog.alone === true;
+                    });
+                    $(result).each(function (i, obj) {
+                        $("#" + obj.id).slideDown()
+                    });
+                    // !surveyCheck();
+                    $("blockquote").hide(100);
+                    $("header").slideDown(200);
+                    $(".result").attr("disabled", "true")
+                } else if ($("#aloneYes").is(":checked") && $("#bigYes").is(":checked") && $("#activeNo").is(":checked")) {
+                    let result = dogs.filter(function (dog) {
+                        return dog.size > 1;
+                    }).filter(function (dog) {
+                        return dog.calm === true;
+                    }).filter(function (dog) {
+                        return dog.alone === true;
+                    });
+                    $(result).each(function (i, obj) {
+                        $("#" + obj.id).slideDown()
+                    });
+                    // !surveyCheck();
+                    $("blockquote").hide(100);
+                    $("header").slideDown(200);
+                    $(this).attr("disabled", "true");
+                } else if ($("#aloneYes").is(":checked") && $("#bigNo").is(":checked") && $("#activeYes").is(":checked")) {
+                    let result = dogs.filter(function (dog) {
+                        return dog.size < 2;
+                    }).filter(function (dog) {
+                        return dog.calm === false;
+                    }).filter(function (dog) {
+                        return dog.alone === true;
+                    });
+                    $(result).each(function (i, obj) {
+                        $("#" + obj.id).slideDown()
+                    });
+                    // !surveyCheck();
+                    $("blockquote").hide(100);
+                    $("header").slideDown(200);
+                    $(this).attr("disabled", "true");
+                } else if ($("#aloneYes").is(":checked") && $("#bigNo").is(":checked") && $("#activeNo").is(":checked")) {
+                    let result = dogs.filter(function (dog) {
+                        return dog.size < 2;
+                    }).filter(function (dog) {
+                        return dog.calm === true;
+                    }).filter(function (dog) {
+                        return dog.alone === true;
+                    });
+                    $(result).each(function (i, obj) {
+                        $("#" + obj.id).slideDown()
+                    });
+                    //  !surveyCheck();
+                    $("blockquote").hide(100);
+                    $("header").slideDown(200);
+                    $(this).attr("disabled", "true");
+                } else if ($("#aloneNo").is(":checked") && $("#bigNo").is(":checked") && $("#activeYes").is(":checked")) {
+                    let result = dogs.filter(function (dog) {
+                        return dog.size < 2;
+                    }).filter(function (dog) {
+                        return dog.calm === false;
+                    }).filter(function (dog) {
+                        return dog.alone === false;
+                    });
+                    $(result).each(function (i, obj) {
+                        $("#" + obj.id).slideDown()
+                    });
+                    // !surveyCheck();
+                    $("blockquote").hide(100);
+                    $("header").slideDown(200);
+                    $(this).attr("disabled", "true");
+                } else if ($("#aloneNo").is(":checked") && $("#bigNo").is(":checked") && $("#activeNo").is(":checked")) {
+                    let result = dogs.filter(function (dog) {
+                        return dog.size < 2;
+                    }).filter(function (dog) {
+                        return dog.calm === true;
+                    }).filter(function (dog) {
+                        return dog.alone === true;
+                    });
+                    $(result).each(function (i, obj) {
+                        $("#" + obj.id).slideDown()
+                    });
+                    // !surveyCheck();
+                    $("blockquote").hide(100);
+                    $("header").slideDown(200);
+                    $(this).attr("disabled", "true");
+                } else if ($("#aloneNo").is(":checked") && $("#bigYes").is(":checked") && $("#activeNo").is(":checked")) {
+                    let result = dogs.filter(function (dog) {
+                        return dog.size > 1;
+                    }).filter(function (dog) {
+                        return dog.calm === true;
+                    }).filter(function (dog) {
+                        return dog.alone === false;
+                    });
+                    $(result).each(function (i, obj) {
+                        $("#" + obj.id).slideDown()
+                    });
+                    // !surveyCheck();
+                    $("blockquote").hide(100);
+                    $("header").slideDown(200);
+                    $(this).attr("disabled", "true");
+                } else if ($("#aloneNo").is(":checked") && $("#bigYes").is(":checked") && $("#activeYes").is(":checked")) {
+                    let result = dogs.filter(function (dog) {
+                        return dog.size > 1;
+                    }).filter(function (dog) {
+                        return dog.calm === false;
+                    }).filter(function (dog) {
+                        return dog.alone === false;
+                    });
+                    $(result).each(function (i, obj) {
+                        $("#" + obj.id).slideDown()
+                    });
+                    // !surveyCheck();
+                    $("blockquote").hide(100);
+                    $("header").slideDown(200);
+                    $(this).attr("disabled", "true");
+                }
+
+            })
+
+            $(".clear").click(function () {
+                $("header").slideUp(100);
+                $(".adopt_row >div").slideUp(200);
+                $("#survey input").prop("checked", false);
+                $(".result").removeAttr("disabled");
+                $("blockquote").hide(100);
+            });
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-sm">
+            <a class="navbar-brand" href="home_mobile.html">Y<span>P</span>A<span>P</span></a>
+            <span class="navbar-brand fs-6">용인보호협회</span>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item ">
+                        <a class="nav-link  active" href="adopt_mobile.html">입양</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link  active" href="foster_mobile.html">임보</a>
+                    </li>
+
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            도와주기
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="donate_mobile.html">후원하기</a></li>
+                            <li><a class="dropdown-item" href="volunteer_mobile.html">봉사하기</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-sm mt-3 mb-4 title">
+        <h1 class="mb-2">입양할 준비가 되셨나요?</h1>
+        <p>유기견에게 행복한 삶을 주시고 가족이 되고 싶으신데 어떤 강아지가 적합할지 고민 되시나요?</p>
+        <p> 매칭이 되는 강아지가 찾아보세요.</p>
+    </div>
+
+    <section>
+        <div class="container survey_container py-3">
+            <h2 class="mb-2">설문 조사</h2>
+            <div id="survey">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <p class="mb-1">현재 반려동물을 키누십니까?</p>
+                        <div class="row">
+                            <div class="col-5">
+                                <input class="form-check-input" type="radio" name="alone" id="aloneYes">
+                                <label class="form-check-label me-5" for="aloneYes">아니요</label>
+                            </div>
+                            <div class="col-5">
+                                <input class="form-check-input" type="radio" name="alone" id="aloneNo">
+                                <label class="form-check-label" for="aloneNo">예</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <p class="mb-1">작은 강아지 아니면 큰 강아지가 좋습니까?</p>
+                        <div class="row">
+                            <div class="col-5">
+                                <input class="form-check-input" type="radio" name="dos" id="bigYes">
+                                <label class="form-check-label me-5" for="bigYes">큰 개</label>
+                            </div>
+                            <div class="col-5">
+                                <input class="form-check-input" type="radio" name="dos" id="bigNo">
+                                <label class="form-check-label" for="bigNo">작은 개</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-1">본인의 성격은 어떻습니다?</p>
+                        <div class="row">
+                            <div class="col-5">
+                                <input class="form-check-input" type="radio" name="actives" id="activeNo">
+                                <label class="form-check-label me-5" for="activeNo">차분함</label>
+                            </div>
+                            <div class="col-5">
+                                <input class="form-check-input" type="radio" name="actives" id="activeYes">
+                                <label class="form-check-label" for="activeYes">활동적</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <blockquote class="ps-1 pt-1">설문을 완성하세요</blockquote>
+
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-6">
+                    <button class="result btn py-2 px-4  ">결과 보기</button>
+                </div>
+                <div class="col-5 offset-1">
+                    <button class="clear btn py-2 px-4">초기화</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="result" class="container">
+
+        <div class="adopt_row row">
+            <header class="mt-3">
+                <h3 class="mb-2">매칭된 아이들을 소개합니다</h3>
+                <p class="mb-3">프포필 사진을 누르면 상세 페이지로 이동합니다.</p>
+            </header>
+
+            <div class="profile mb-3 pt-2" id="arnie">
+                <a href="profile_mobile_arnie.html">
+                    <div class="img rounded-top"></div>
+                </a>
+                <div class="adopt_info p-0 rounded-bottom">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">아르니</dd>
+                        <dd>1살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>진돗개</dd>
+                        <dd>암컷</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="buddy">
+                <a href="profile_mobile_buddy.html">
+                    <div class="img rounded-top"></div>
+                </a>
+                <div class="adopt_info p-0 rounded-bottom">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">버디</dd>
+                        <dd>3살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>진돗개</dd>
+                        <dd>수컷</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="chonks">
+                <a href="profile_chonks.html">
+                    <div class="img rounded-top"></div>
+                </a>
+                <div class="adopt_info p-0 rounded-bottom">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">총크스</dd>
+                        <dd>6개월</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>진돗개</dd>
+                        <dd>수컷</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="jelly">
+                <a href="profile_jelly.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info p-0 rounded-bottom">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">젤리</dd>
+                        <dd>6살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>진돗개</dd>
+                        <dd>수컷</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="cujo">
+                <a href="profile_cujo.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">쿠조</dd>
+                        <dd>2살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>진돗개</dd>
+                        <dd>수컷</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="paul">
+                <a href="profile_paul.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">폴</dd>
+                        <dd>3살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>불독</dd>
+                        <dd>수컷</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="woody">
+                <a href="profile_woody.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">우디</dd>
+                        <dd>6개월</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>진돗개</dd>
+                        <dd>수컷</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="kookie">
+                <a href="profile_kookie.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">쿠키</dd>
+                        <dd>2살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>진돗개</dd>
+                        <dd>수컷</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="profile mb-4 pt-2" id="amaia">
+                <a href="profile_amaia.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">아마야</dd>
+                        <dd>3살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>진도믹스</dd>
+                        <dd>암컷</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="ari">
+                <a href="profile_ari.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">아리</dd>
+                        <dd>3살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>진돗개</dd>
+                        <dd>암컷</dd>
+                    </dl>
+
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="nike">
+                <a href="profile_nike.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">나이키</dd>
+                        <dd>4살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>라바도르</dd>
+                        <dd>수컷</dd>
+                    </dl>
+
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="max">
+                <a href="profile_max.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">맥스</dd>
+                        <dd>4살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>믹스견</dd>
+                        <dd>수컷</dd>
+                    </dl>
+
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="laddie">
+                <a href="profile_laddie.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">래디</dd>
+                        <dd>8개월</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>콜리믹스</dd>
+                        <dd>수컷</dd>
+                    </dl>
+
+                </div>
+            </div>
+
+            <div class="profile mb-4 pt-2" id="hatchi">
+                <a href="profile_hatchi.html">
+                    <div class="img"></div>
+                </a>
+                <div class="adopt_info">
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd class="fw-bold">해치</dd>
+                        <dd>2살</dd>
+                    </dl>
+                    <dl class="d-flex justify-content-around m-0">
+                        <dd>진돗개</dd>
+                        <dd>수컷</dd>
+                    </dl>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-0 py-2 px-4">
+        <div class="row text-center py-3 border-bottom">
+            <div class="col-12">
+                YPAP 용인시 동물 보호 협회 기미연 경기도 용인시 처인구 모현면 오산리 193-28 죽전보호소
+                <a href="mailto:ypap@gmail.com">ypap@gmail.com</a>
+            </div>
+        </div>
+
+        <div class="row text-center py-3 border-bottom">
+            <div class="col-12">
+                <a href="tel:+820313243463">+82 031-324-3463</a>
+            </div>
+        </div>
+
+        <div class="row contact text-center py-3 border-bottom">
+            <div class="col-6"> <a href="directions_mobile.html" class="link ms-2 me-5 mt-2">오시는길</a></div>
+            <div class="col-6"> <a href="#" class="link mt-2" id="contact">문의하기</a></div>
+        </div>
+
+        <div class="row contact text-center pt-3 pb-2">
+            <div class="col-4">
+                <a href="https://www.instagram.com/ypap.rescue/" class="social"><img src="../lib/icons/instagram.png"
+                        alt=""></a>
+            </div>
+            <div class="col-4">
+                <a href="https://www.facebook.com/ForBonnies/" class="social "><img src="../lib/icons/facebook.png"
+                        alt=""></a>
+            </div>
+            <div class="col-4">
+                <a href="#" class="social "><img src="../lib/icons/TikTok.png" alt=""></a>
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="contact_form p-2">
+        <h3 class="pt-2 mb-0">문의하기</h3>
+        <form method="post" name="frm">
+            <label for="user" class="form-label "></label>
+            <input type="text" name="user" id="user" class="form-control" placeholder="이름을 적어주세요">
+            <div id="nameAlert" class="form-text ps-2">이름이 필요합니다.</div>
+
+            <label for="email" class="form-label "></label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+                placeholder="이메일을 적어주세요">
+            <div id="emailHelp" class="form-text ps-2">이메일은 공개되지 않습니다.</div>
+            <div id="emailAlert" class="form-text ps-2">이메일이 필요합니다.</div>
+
+            <label for="title" class="form-label"></label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="제목을 적어주세요">
+            <div id="titleAlert" class="form-text ps-2">제목이 필요합니다.</div>
+
+            <label for="msg" class="form-label "></label>
+            <textarea name="msg" id="msg" rows="6" class="form-control" placeholder="문의 내용을 적어주세요"></textarea>
+            <div id="msgAlert" class="form-text ps-2">문의 내용이 필요합니다.</div>
+
+            <button type="submit" class="btn btn-lg px-4 mt-2">문의내용 제출</button>
+            <button class="btn btn-lg px-4 mt-2">닫기</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
