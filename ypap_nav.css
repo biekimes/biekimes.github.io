@@ -54,12 +54,10 @@ footer {
     color: #FFFFFF;
 }
 
-footer p {
-    font-size: 14px;
+footer p {   
     width: 100%;
-    padding-bottom: 18px;
-    border-bottom: 0.5px solid #FFFFFF;
-}
+    font-size: 14px;
+   }
 
 footer p a {
     text-decoration: none;
