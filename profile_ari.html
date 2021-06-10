@@ -75,11 +75,7 @@
         }
 
         $(function () {
-            /* if ($(window).width() <= 375) {
-                 window.location.href = "home_mobile.html";
-             } else if ($(window).width() > 375) {
-                 window.location.href = "home.html";
-             }*/
+
 
             $(".dropdown-menu").hide();
             $(".dropdown").mouseenter(function () {
@@ -107,7 +103,8 @@
             });
 
             $(".contact_form button:nth-of-type(2)").click(function () {
-                $(".contact_form").hide(100)
+                $(".contact_form").hide(100);
+                return false;
             });
 
         })

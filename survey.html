@@ -104,7 +104,8 @@
             });
 
             $(".contact_form button:nth-of-type(2)").click(function () {
-                $(".contact_form").hide(100)
+                $(".contact_form").hide(100);
+                return false;
             });
 
 
@@ -211,17 +212,6 @@
                     }
                 ]
 
-                /* let result = dogs.filter(function (dog) {
-                     return dog.size > 1;
-                 }).filter(function (dog) {
-                     return dog.calm === true;
-                 }).filter(function (dog) {
-                     return dog.alone === true;
-                 });
-                 console.log(result)
-                 $(result).each(function (i, obj) {
-                     $("#" + obj.id).slideDown()
-                 });*/
 
                 if ($("input").not(":checked")) {
                     $("blockquote").show(100);
@@ -731,7 +721,7 @@
                 </div>
 
                 <div class="col-3 flag_container d-flex justify-content-end">
-                    <a href="home.html" class="flag_link me-4">
+                    <a href="survey.html" class="flag_link me-4">
                         <div class="kor"></div>
                     </a>
 

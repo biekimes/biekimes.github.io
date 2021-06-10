@@ -111,6 +111,16 @@ nav .container > span{
 .gallery_img:nth-of-type(9) .img{
     background-image: url('../lib/fotos_de_ypap/cujo1.jpg');
 }
+.gallery_img:nth-of-type(10) .img{
+    background-image: url('../lib/fotos_de_ypap/aloe1.jpg');
+}
+.gallery_img:nth-of-type(11) .img{
+    background-image: url('../lib/fotos_de_ypap/amaia1.jpg');
+}
+.gallery_img:nth-of-type(12) .img{
+    background-image: url('../lib/fotos_de_ypap/max1.jpg');
+    
+}
 
 
 .gallery {

@@ -79,7 +79,6 @@
                 window.location.href = "mobile_version/profile_mobile_arnie.html"
             }
 
-
             $(".dropdown-menu").hide();
             $(".dropdown").mouseenter(function () {
                 $(this).children(".dropdown-menu").stop().slideDown(300);
@@ -106,7 +105,8 @@
             });
 
             $(".contact_form button:nth-of-type(2)").click(function () {
-                $(".contact_form").hide(100)
+                $(".contact_form").hide(100);
+                return false;
             });
 
         })
@@ -278,7 +278,7 @@
                 </div>
 
                 <div class="col-3 flag_container d-flex justify-content-end">
-                    <a href="home.html" class="flag_link me-4">
+                    <a href="profile_arnie.html" class="flag_link me-4">
                         <div class="kor"></div>
                     </a>
 
