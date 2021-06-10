@@ -72,6 +72,15 @@ $(function () {
         })
     });
 
+    $(".profile .img").mousedown(function () {
+        $(this).parents(".profile").css({
+            "border": "5px solid #747E48",
+            "border-radius": "10px",
+            "box-sizing": "border-box"
+        });
+    })
+
+
     $(".hide").hide();
     $(".show_more").click(function () {
         $(".profile:hidden").slice(0, 1).slideDown(200);
