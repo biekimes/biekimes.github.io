@@ -54,7 +54,7 @@
     <div class="container-sm pt-0">
         <div class="intro row pt-3 mb-3">
             <div class="col-12">
-                <h1>입양이 필요한 아이들을 소개합니다</h1>
+                <h1>Dogs Looking for Families</h1>
                 <p class="mb-2">입양이 필요한 아이들을 소개합니다. </p>
                 <p class="mb-2">
                     사육장, 퍼피밀 및 동물학대 현장 등에서 구출된 강아지이들이 사랑을 주고받을 수 있는 가족을 찾는 것이
@@ -67,13 +67,13 @@
 
     <header class="mb-4">
         <div class="container survey text-center p-3">
-            <h2 class="mb-2">본인에게 적합한 강아지를 찾습니까?</h2>
-            <a href="survey_mobile.html"> <button class="py-2 px-5">설문 하기</button></a>
+            <h2 class="mb-2">Looking for the right dog for you?</h2>
+            <a href="survey_mobile.html"> <button class="py-2 px-5">Survey</button></a>
         </div>
     </header>
 
     <div class="container adopt_list">
-        <p class="ps-2 mb-2">강아지 사진을 누르시면 프로필 페이지로 이동합니다. </p>
+        <p class="ps-2 mb-2">Click on the picture to go to the profile page. </p>
 
         <div class="profile mb-4">
             <a href="profile_mobile_arnie.html">
@@ -81,7 +81,7 @@
             </a>
             <div class="adopt_info p-2 rounded-bottom">
                 <dl class="d-flex justify-content-around m-0">
-                    <dd class="fw-bold">아르니</dd>
+                    <dd class="fw-bold">Arnie</dd>
                     <dd>1살</dd>
                 </dl>
                 <dl class="d-flex justify-content-around m-0">
@@ -98,7 +98,7 @@
             </a>
             <div class="adopt_info p-2 rounded-bottom">
                 <dl class="d-flex justify-content-around m-0">
-                    <dd class="fw-bold">버디</dd>
+                    <dd class="fw-bold">Buddy</dd>
                     <dd>3살</dd>
                 </dl>
                 <dl class="d-flex justify-content-around m-0">
@@ -227,10 +227,10 @@
 
         <div class="row mt-3">
             <div class="col-4 offset-4 text-center ">
-                <button class="show_more btn py-2 px-4">더보기</button>
+                <button class="show_more btn py-2 px-4">Expand</button>
             </div>
             <div class="col-2 offset-2">
-                <button class="top_btn pt-3"> 위로 </button>
+                <button class="top_btn pt-3"> Top </button>
             </div>
         </div>
     </div>
@@ -239,9 +239,23 @@
 
 
     <footer class="mt-4 py-2 px-4">
+        <div class="row py-3 border-bottom">
+            <div class="col-12 flag_container d-flex justify-content-evenly">
+                <a href="../mobile_version/home_mobile.html" class="flag_link me-4">
+                    <div class="kor"></div>
+                </a>
+                <a href="home_mobile_eng.html" class="flag_link me-4">
+                    <div class="eng"></div>
+                </a>
+                <a href="#" class="flag_link me-2">
+                    <div class="esp"></div>
+                </a>
+            </div>
+        </div>
+
         <div class="row text-center py-3 border-bottom">
             <div class="col-12">
-                YPAP 용인시 동물 보호 협회 기미연 경기도 용인시 처인구 모현면 오산리 193-28 죽전보호소
+                YPAP Address
                 <a href="mailto:ypap@gmail.com">ypap@gmail.com</a>
             </div>
         </div>
@@ -253,8 +267,8 @@
         </div>
 
         <div class="row contact text-center py-3 border-bottom">
-            <div class="col-6"> <a href="directions_mobile.html" class="link ms-2 me-5 mt-2">오시는길</a></div>
-            <div class="col-6"> <a href="#" class="link mt-2" id="contact">문의하기</a></div>
+            <div class="col-6"> <a href="directions_mobile.html" class="link ms-2 me-5 mt-2">Directions</a></div>
+            <div class="col-6"> <a href="#" class="link mt-2" id="contact">Contact Us</a></div>
         </div>
 
         <div class="row contact text-center pt-3 pb-2">
@@ -274,31 +288,31 @@
     </footer>
 
     <div class="contact_form p-2">
-        <h3 class="pt-2 mb-0">문의하기</h3>
+        <h3 class="pt-2 mb-0">Contact Us</h3>
         <form method="post" name="frm">
             <label for="user" class="form-label "></label>
-            <input type="text" name="user" id="user" class="form-control" placeholder="이름을 적어주세요">
-            <div id="nameAlert" class="form-text ps-2">이름이 필요합니다.</div>
+            <input type="text" name="user" id="user" class="form-control" placeholder="Your Name">
+            <div id="nameAlert" class="form-text ps-2">We need a Name</div>
 
             <label for="email" class="form-label "></label>
             <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
-                placeholder="이메일을 적어주세요">
-            <div id="emailHelp" class="form-text ps-2">이메일은 공개되지 않습니다.</div>
-            <div id="emailAlert" class="form-text ps-2">이메일이 필요합니다.</div>
+                placeholder="Your Email">
+            <div id="emailHelp" class="form-text ps-2">We do not give out your email.</div>
+            <div id="emailAlert" class="form-text ps-2">Email needed</div>
 
             <label for="title" class="form-label"></label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="제목을 적어주세요">
-            <div id="titleAlert" class="form-text ps-2">제목이 필요합니다.</div>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+            <div id="titleAlert" class="form-text ps-2">Title needed</div>
 
             <label for="msg" class="form-label "></label>
-            <textarea name="msg" id="msg" rows="6" class="form-control" placeholder="문의 내용을 적어주세요"></textarea>
-            <div id="msgAlert" class="form-text ps-2">문의 내용이 필요합니다.</div>
+            <textarea name="msg" id="msg" rows="6" class="form-control"
+                placeholder="Write your comments or questions here"></textarea>
+            <div id="msgAlert" class="form-text ps-2">Comment needed.</div>
 
-            <button type="submit" class="btn btn-lg px-4 mt-2">문의내용 제출</button>
-            <button class="btn btn-lg px-4 mt-2">닫기</button>
+            <button type="submit" class="btn btn-lg px-4 mt-2">Submit</button>
+            <button class="btn btn-lg px-4 mt-2">Close</button>
         </form>
     </div>
-
 
 </body>
 

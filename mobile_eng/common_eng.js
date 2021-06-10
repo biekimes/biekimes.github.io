@@ -72,6 +72,19 @@ $(function () {
         })
     });
 
+    $(".hide").hide();
+    $(".show_more").click(function () {
+        $(".profile:hidden").slice(0, 1).slideDown(200);
+        if ($(".profile:hidden").length === 0) {
+            $(this).attr("disabled", "true")
+        }
+    });
+
+    $(".top_btn").on('click', function (e) {
+        e.preventDefault();
+        $('html').animate({ scrollTop: 0 }, 100);
+    });
+
     $(".contact_form").hide();
     $("#contact").click(function () {
         $(".contact_form").fadeIn(300);

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>용보협 모바일</title>
+    <title>YPAP Mobile</title>
     <link rel="stylesheet" href="../lib/bootstrap-5.0.1-dist/css/bootstrap.css">
     <script src="../lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
     <script src="../lib/jquery-3.6.0.min.js"></script>
@@ -116,13 +116,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-sm">
-<<<<<<< HEAD
             <a class="navbar-brand" href="home_mobile_eng.html">Y<span>P</span>A<span>P</span></a>
             <span class="navbar-brand fs-6"></span>
-=======
-            <a class="navbar-brand" href="home_mobile.html">Y<span>P</span>A<span>P</span></a>
-            <span class="navbar-brand fs-6">용인보호협회</span>
->>>>>>> 9bd8f42696e9363940966e51a2158707d51c87ea
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -131,35 +126,20 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item ">
-<<<<<<< HEAD
                         <a class="nav-link  active" href="adopt_mobile.html">Adopt</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link  active" href="foster_mobile.html">Foster</a>
-=======
-                        <a class="nav-link  active" href="adopt_mobile.html">입양</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link  active" href="foster_list.html">임보</a>
->>>>>>> 9bd8f42696e9363940966e51a2158707d51c87ea
                     </li>
 
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-<<<<<<< HEAD
                             Help Us
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="donate_mobile.html">Donate</a></li>
                             <li><a class="dropdown-item" href="volunteer_mobile.html">Volunteer</a></li>
-=======
-                            도와주기
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">후원하기</a></li>
-                            <li><a class="dropdown-item" href="#">봉사하기</a></li>
->>>>>>> 9bd8f42696e9363940966e51a2158707d51c87ea
                         </ul>
                     </li>
                 </ul>
@@ -167,10 +147,6 @@
         </div>
     </nav>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9bd8f42696e9363940966e51a2158707d51c87ea
     <header class="my-4">
         <div class="header container-sm pb-3">
             <h1 class="mb-1">오시는길</h1>
@@ -195,10 +171,24 @@
         </div>
     </div>
 
-    <footer class="mt-5 py-2 px-4">
+    <footer class="mt-4 py-2 px-4">
+        <div class="row py-3 border-bottom">
+            <div class="col-12 flag_container d-flex justify-content-evenly">
+                <a href="../mobile_version/adopt_mobile.html" class="flag_link me-4">
+                    <div class="kor"></div>
+                </a>
+                <a href="directions_mobile.html" class="flag_link me-4">
+                    <div class="eng"></div>
+                </a>
+                <a href="#" class="flag_link me-2">
+                    <div class="esp"></div>
+                </a>
+            </div>
+        </div>
+
         <div class="row text-center py-3 border-bottom">
             <div class="col-12">
-                YPAP 용인시 동물 보호 협회 기미연 경기도 용인시 처인구 모현면 오산리 193-28 죽전보호소
+                YPAP Address
                 <a href="mailto:ypap@gmail.com">ypap@gmail.com</a>
             </div>
         </div>
@@ -208,9 +198,10 @@
                 <a href="tel:+820313243463">+82 031-324-3463</a>
             </div>
         </div>
+
         <div class="row contact text-center py-3 border-bottom">
-            <div class="col-6"> <a href="directions_mobile.html" class="link ms-2 me-5 mt-2">오시는길</a></div>
-            <div class="col-6"> <a href="#" class="link mt-2" id="contact">문의하기</a></div>
+            <div class="col-6"> <a href="directions_mobile.html" class="link ms-2 me-5 mt-2">Directions</a></div>
+            <div class="col-6"> <a href="#" class="link mt-2" id="contact">Contact Us</a></div>
         </div>
 
         <div class="row contact text-center pt-3 pb-2">
@@ -223,35 +214,36 @@
                         alt=""></a>
             </div>
             <div class="col-4">
-                <a href="https://www.facebook.com/ForBonnies/" class="social "><img src="../lib/icons/TikTok.png"
-                        alt=""></a>
+                <a href="#" class="social "><img src="../lib/icons/TikTok.png" alt=""></a>
             </div>
+
         </div>
     </footer>
 
-    <div class="contact_form p-4">
-        <h3 class="mb-0">문의하기</h3>
+    <div class="contact_form p-2">
+        <h3 class="pt-2 mb-0">Contact Us</h3>
         <form method="post" name="frm">
-            <label for="user" class="form-label mb-1"></label>
-            <input type="text" name="user" id="user" class="form-control" placeholder="이름을 적어주세요">
-            <div id="nameAlert" class="form-text ps-2">이름이 필요합니다.</div>
+            <label for="user" class="form-label "></label>
+            <input type="text" name="user" id="user" class="form-control" placeholder="Your Name">
+            <div id="nameAlert" class="form-text ps-2">We need a Name</div>
 
-            <label for="email" class="form-label mb-1 mt-3"></label>
+            <label for="email" class="form-label "></label>
             <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
-                placeholder="이메일을 적어주세요">
-            <div id="emailHelp" class="form-text ps-2">이메일은 공개되지 않습니다.</div>
-            <div id="emailAlert" class="form-text ps-2">이메일이 필요합니다.</div>
+                placeholder="Your Email">
+            <div id="emailHelp" class="form-text ps-2">We do not give out your email.</div>
+            <div id="emailAlert" class="form-text ps-2">Email needed</div>
 
-            <label for="title" class="form-label mb-1 mt-2"></label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="제목을 적어주세요">
-            <div id="titleAlert" class="form-text ps-2">제목이 필요합니다.</div>
+            <label for="title" class="form-label"></label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+            <div id="titleAlert" class="form-text ps-2">Title needed</div>
 
-            <label for="msg" class="form-label mb-1 mt-3"></label>
-            <textarea name="msg" id="msg" rows="6" class="form-control" placeholder="문의 내용을 적어주세요"></textarea>
-            <div id="msgAlert" class="form-text ps-2">문의 내용이 필요합니다.</div>
+            <label for="msg" class="form-label "></label>
+            <textarea name="msg" id="msg" rows="6" class="form-control"
+                placeholder="Write your comments or questions here"></textarea>
+            <div id="msgAlert" class="form-text ps-2">Comment needed.</div>
 
-            <button type="submit" class="btn btn-lg px-4 mt-3">문의내용 제출</button>
-            <button class="btn btn-lg px-4 mt-3">닫기</button>
+            <button type="submit" class="btn btn-lg px-4 mt-2">Submit</button>
+            <button class="btn btn-lg px-4 mt-2">Close</button>
         </form>
     </div>
 
