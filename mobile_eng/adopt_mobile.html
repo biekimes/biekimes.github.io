@@ -11,7 +11,6 @@
     <script src="../lib/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="common_mobile.css">
     <link rel="stylesheet" href="adopt_mobile.css">
-<<<<<<< HEAD
     <script src="common_eng.js"></script>
 
 
@@ -23,137 +22,6 @@
         <div class="container-sm">
             <a class="navbar-brand" href="home_mobile.html">Y<span>P</span>A<span>P</span></a>
             <span class="navbar-brand fs-6"></span>
-=======
-
-
-    <script>
-        function nameCheck() {
-            var name = $("#user");
-            if ($(name).val().length < 1) {
-                $("#nameAlert").show(100);
-                $("#nameAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(name).val().length >= 1) {
-                $("#nameAlert").hide(100);
-            }
-            return true;
-        }
-
-        function emailCheck() {
-            var email = $("#email");
-            if ($(email).val().length < 1) {
-                $("#emailHelp").hide();
-                $("#emailAlert").show(100);
-                $("#emailAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(email).val().length >= 1) {
-                $("#emailAlert").hide(100);
-            }
-            return true;
-        }
-
-        function titleCheck() {
-            let title = $("#title");
-            if ($(title).val().length < 1) {
-                $("#titleAlert").show(100);
-                $("#titleAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(title).val().length >= 1) {
-                $("#titleAlert").hide(100);
-            }
-            return true;
-        }
-
-        function msgCheck() {
-            let msg = $("#msg");
-            if ($(msg).val().length < 1) {
-                $("#msgAlert").show(100);
-                $("#msgAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(msg).val().length >= 1) {
-                $("#msgAlert").hide(100);
-            }
-            return true;
-        }
-
-        $(function () {
-            if ($(window).width() > 400) {
-                window.location.href = "../adoption.html"
-            }
-
-            $(".dropdown-menu").hide();
-            $(".dropdown").click(function () {
-                $(this).children(".dropdown-menu").stop().slideToggle(300);
-                $(this).not(this).click(function () {
-                    $(this).children(".dropdown-menu").slideUp()
-                })
-            });
-
-            $(".profile .img").mousedown(function () {
-                $(this).parents(".profile").css({
-                    "border": "5px solid #747E48",
-                    "border-radius": "10px",
-                    "box-sizing": "border-box"
-                });
-            })
-
-            $(".hide").hide();
-            $(".show_more").click(function () {
-                $(".profile:hidden").slice(0, 1).slideDown(200);
-                if ($(".profile:hidden").length === 0) {
-                    $(this).attr("disabled", "true")
-                    $(this).text("더없음")
-                }
-            });
-
-            $(".top_btn").on('click', function (e) {
-                e.preventDefault();
-                $('html').animate({ scrollTop: 0 }, 100);
-            });
-
-            $(".contact_form").hide();
-            $("#contact").click(function () {
-                $(".contact_form").fadeIn(300);
-            });
-
-            $("#nameAlert").hide();
-            $("#emailAlert").hide();
-            $("#titleAlert").hide();
-            $("#msgAlert").hide();
-            $("form").submit(function (e) {
-                if (!nameCheck()) return false;
-                if (!emailCheck()) return false;
-                if (!titleCheck()) return false;
-                if (!msgCheck()) return false;
-            });
-
-            $(".contact_form button:nth-of-type(2)").click(function () {
-                $(".contact_form").hide(100)
-            });
-
-
-        })
-    </script>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-sm">
-            <a class="navbar-brand" href="home_mobile.html">Y<span>P</span>A<span>P</span></a>
-            <span class="navbar-brand fs-6">용인보호협회</span>
->>>>>>> 9bd8f42696e9363940966e51a2158707d51c87ea
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -162,35 +30,20 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item ">
-<<<<<<< HEAD
                         <a class="nav-link  active" href="adopt_mobile.html">Adopt</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link  active" href="foster_mobile.html">Foster</a>
-=======
-                        <a class="nav-link  active" href="adopt_mobile.html">입양</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link  active" href="foster_mobile.html">임보</a>
->>>>>>> 9bd8f42696e9363940966e51a2158707d51c87ea
                     </li>
 
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-<<<<<<< HEAD
                             Help Us
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="donate_mobile.html">Donate</a></li>
                             <li><a class="dropdown-item" href="volunteer_mobile.html">Volunteer</a></li>
-=======
-                            도와주기
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="donate_mobile.html">후원하기</a></li>
-                            <li><a class="dropdown-item" href="volunteer_mobile.html">봉사하기</a></li>
->>>>>>> 9bd8f42696e9363940966e51a2158707d51c87ea
                         </ul>
                     </li>
                 </ul>
