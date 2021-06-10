@@ -5,118 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>용보협 모바일</title>
+    <title>YPAP Mobile</title>
     <link rel="stylesheet" href="../lib/bootstrap-5.0.1-dist/css/bootstrap.css">
     <script src="../lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
     <script src="../lib/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="volunteer_mobile.css">
     <link rel="stylesheet" href="common_mobile.css">
+    <script src="common_eng.js"></script>
 
 
-    <script>
-        function nameCheck() {
-            var name = $("#user");
-            if ($(name).val().length < 1) {
-                $("#nameAlert").show(100);
-                $("#nameAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(name).val().length >= 1) {
-                $("#nameAlert").hide(100);
-            }
-            return true;
-        }
-
-        function emailCheck() {
-            var email = $("#email");
-            if ($(email).val().length < 1) {
-                $("#emailHelp").hide();
-                $("#emailAlert").show(100);
-                $("#emailAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(email).val().length >= 1) {
-                $("#emailAlert").hide(100);
-            }
-            return true;
-        }
-
-        function titleCheck() {
-            let title = $("#title");
-            if ($(title).val().length < 1) {
-                $("#titleAlert").show(100);
-                $("#titleAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(title).val().length >= 1) {
-                $("#titleAlert").hide(100);
-            }
-            return true;
-        }
-
-        function msgCheck() {
-            let msg = $("#msg");
-            if ($(msg).val().length < 1) {
-                $("#msgAlert").show(100);
-                $("#msgAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(msg).val().length >= 1) {
-                $("#msgAlert").hide(100);
-            }
-            return true;
-        }
-
-        $(function () {
-            if ($(window).width() > 400) {
-                window.location.href = "../volunteer.html"
-            }
-
-            $(".dropdown-menu").hide();
-            $(".dropdown").click(function () {
-                $(this).children(".dropdown-menu").stop().slideToggle(300);
-                $(this).not(this).click(function () {
-                    $(this).children(".dropdown-menu").slideUp()
-                })
-            });
-
-            $(".contact_form").hide();
-            $("#contact").click(function () {
-                $(".contact_form").fadeIn(300);
-            });
-
-            $("#nameAlert").hide();
-            $("#emailAlert").hide();
-            $("#titleAlert").hide();
-            $("#msgAlert").hide();
-            $("form").submit(function (e) {
-                if (!nameCheck()) return false;
-                if (!emailCheck()) return false;
-                if (!titleCheck()) return false;
-                if (!msgCheck()) return false;
-            });
-
-            $(".contact_form button:nth-of-type(2)").click(function () {
-                $(".contact_form").hide(100)
-            });
-
-        })
-    </script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-sm">
-            <a class="navbar-brand" href="home_mobile.html">Y<span>P</span>A<span>P</span></a>
-            <span class="navbar-brand fs-6">용인보호협회</span>
+            <a class="navbar-brand" href="home_mobile_eng.html">Y<span>P</span>A<span>P</span></a>
+            <span class="navbar-brand fs-6"></span>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,20 +29,20 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item ">
-                        <a class="nav-link  active" href="adopt_mobile.html">입양</a>
+                        <a class="nav-link  active" href="adopt_mobile.html">Adopt</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link  active" href="foster_mobile.html">임보</a>
+                        <a class="nav-link  active" href="foster_mobile.html">Foster</a>
                     </li>
 
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            도와주기
+                            Help Us
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="donate_mobile.html">후원하기</a></li>
-                            <li><a class="dropdown-item" href="volunteer_mobile.html">봉사하기</a></li>
+                            <li><a class="dropdown-item" href="donate_mobile.html">Donate</a></li>
+                            <li><a class="dropdown-item" href="volunteer_mobile.html">Volunteer</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -172,7 +76,7 @@
         <div class="container py-2">
             <div class="row">
                 <div class="col-10 offset-2">
-                    <h2 class="my-2">다음 산책 봉사 일정</h1>
+                    <h2 class="my-2">Upcoming Volunteer Events</h1>
                         <p class="my-1">2021년 6월 12일 오후 12:30</p>
                         <p class="my-1">2021년 6월 19일 오후 12:30</p>
                         <p class="my-1">2021년 6월 27일 오후 1:00</p>
@@ -183,7 +87,7 @@
                 <div class="col-12">
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSfl_ysvrG2teSQWoiMbzCa0nRGP0QW7RKC55wdHJeR5I9vmcw/viewform">
-                        <button class="btn rounded-pill my-2 py-4">봉사 신청</button>
+                        <button class="btn rounded-pill my-2 py-4">Volunteer</button>
                     </a>
                 </div>
 
@@ -218,10 +122,24 @@
         </article>
     </div>
 
-    <footer class="mt-4 py-2 px-4">
+    <footer class="mt-0 py-2 px-4">
+        <div class="row py-3 border-bottom">
+            <div class="col-12 flag_container d-flex justify-content-evenly">
+                <a href="../mobile_version/volunteer_mobile.html" class="flag_link me-4">
+                    <div class="kor"></div>
+                </a>
+                <a href="volunteer_mobile.html" class="flag_link me-4">
+                    <div class="eng"></div>
+                </a>
+                <a href="#" class="flag_link me-2">
+                    <div class="esp"></div>
+                </a>
+            </div>
+        </div>
+
         <div class="row text-center py-3 border-bottom">
             <div class="col-12">
-                YPAP 용인시 동물 보호 협회 기미연 경기도 용인시 처인구 모현면 오산리 193-28 죽전보호소
+                YPAP Address
                 <a href="mailto:ypap@gmail.com">ypap@gmail.com</a>
             </div>
         </div>
@@ -233,8 +151,8 @@
         </div>
 
         <div class="row contact text-center py-3 border-bottom">
-            <div class="col-6"> <a href="directions_mobile.html" class="link ms-2 me-5 mt-2">오시는길</a></div>
-            <div class="col-6"> <a href="#" class="link mt-2" id="contact">문의하기</a></div>
+            <div class="col-6"> <a href="directions_mobile.html" class="link ms-2 me-5 mt-2">Directions</a></div>
+            <div class="col-6"> <a href="#" class="link mt-2" id="contact">Contact Us</a></div>
         </div>
 
         <div class="row contact text-center pt-3 pb-2">
@@ -254,28 +172,29 @@
     </footer>
 
     <div class="contact_form p-2">
-        <h3 class="pt-2 mb-0">문의하기</h3>
+        <h3 class="pt-2 mb-0">Contact Us</h3>
         <form method="post" name="frm">
             <label for="user" class="form-label "></label>
-            <input type="text" name="user" id="user" class="form-control" placeholder="이름을 적어주세요">
-            <div id="nameAlert" class="form-text ps-2">이름이 필요합니다.</div>
+            <input type="text" name="user" id="user" class="form-control" placeholder="Your Name">
+            <div id="nameAlert" class="form-text ps-2">We need a Name</div>
 
             <label for="email" class="form-label "></label>
             <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
-                placeholder="이메일을 적어주세요">
-            <div id="emailHelp" class="form-text ps-2">이메일은 공개되지 않습니다.</div>
-            <div id="emailAlert" class="form-text ps-2">이메일이 필요합니다.</div>
+                placeholder="Your Email">
+            <div id="emailHelp" class="form-text ps-2">We do not give out your email.</div>
+            <div id="emailAlert" class="form-text ps-2">Email needed</div>
 
             <label for="title" class="form-label"></label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="제목을 적어주세요">
-            <div id="titleAlert" class="form-text ps-2">제목이 필요합니다.</div>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+            <div id="titleAlert" class="form-text ps-2">Title needed</div>
 
             <label for="msg" class="form-label "></label>
-            <textarea name="msg" id="msg" rows="6" class="form-control" placeholder="문의 내용을 적어주세요"></textarea>
-            <div id="msgAlert" class="form-text ps-2">문의 내용이 필요합니다.</div>
+            <textarea name="msg" id="msg" rows="6" class="form-control"
+                placeholder="Write your comments or questions here"></textarea>
+            <div id="msgAlert" class="form-text ps-2">Comment needed.</div>
 
-            <button type="submit" class="btn btn-lg px-4 mt-2">문의내용 제출</button>
-            <button class="btn btn-lg px-4 mt-2">닫기</button>
+            <button type="submit" class="btn btn-lg px-4 mt-2">Submit</button>
+            <button class="btn btn-lg px-4 mt-2">Close</button>
         </form>
     </div>
 
