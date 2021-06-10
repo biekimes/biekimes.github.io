@@ -11,6 +11,10 @@
     color: #828282;
 }
 
+#map1, #map2 {
+    border: 1px solid #000000;
+}
+
 .maps p{
     font-size: 14px;
     color: #828282;
