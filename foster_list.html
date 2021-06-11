@@ -87,10 +87,10 @@
             });
 
 
-            $(".foster_row_hide").hide();
+            $(".hide").hide();
             $(".show_more").click(function () {
-                $(".foster_row_hide:hidden").slice(0, 1).slideDown(300);
-                if ($(".foster_row_hide:hidden").length === 0) {
+                $(".hide:hidden").slice(0, 1).slideDown(300);
+                if ($(".hide:hidden").length === 0) {
                     $(".show_more").attr("disabled", "true");
                     $(this).text("더 없음");
                 }
@@ -119,6 +119,7 @@
             $(".contact_form").hide();
             $("#contact").click(function () {
                 $(".contact_form").fadeIn(300);
+                $("#overlay").css("display", "block")
             });
 
             $("#nameAlert").hide();
@@ -133,7 +134,8 @@
             });
 
             $(".contact_form button:nth-of-type(2)").click(function () {
-                $(".contact_form").hide(100)
+                $(".contact_form").hide(100);
+                $("#overlay").css("display", "none");
                 return false;
             });
 
@@ -336,7 +338,7 @@
             </div>
         </div>
 
-        <div class="foster_row_hide  row mb-5">
+        <div class="foster_row hide  row mb-5">
             <div class="gallery col-3">
                 <div class="foster_pic">
                     <dl>
@@ -395,7 +397,7 @@
             </div>
         </div>
 
-        <div class="foster_row_hide  row mb-5">
+        <div class="foster_row hide  row mb-5">
             <div class="gallery col-3">
                 <div class="foster_pic">
                     <dl>
@@ -454,7 +456,7 @@
             </div>
         </div>
 
-        <div class="foster_row_hide row mb-5">
+        <div class="foster_row hide row mb-5">
             <div class="gallery col-3">
                 <div class="foster_pic">
                     <dl>
@@ -594,6 +596,7 @@
             <button class="btn btn-lg px-4 mt-3">닫기</button>
         </form>
     </div>
+    <div id="overlay"></div>
 </body>
 
 </html>

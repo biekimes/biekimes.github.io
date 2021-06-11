@@ -11,106 +11,13 @@
     <script src="lib/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="ypap_nav.css">
     <link rel="stylesheet" href="profile.css">
+    <script src="common_kor.js"></script>
 
     <script>
-        function nameCheck() {
-            var name = $("#user");
-            if ($(name).val().length < 1) {
-                $("#nameAlert").show(100);
-                $("#nameAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(name).val().length >= 1) {
-                $("#nameAlert").hide(100);
-            }
-            return true;
-        }
-
-        function emailCheck() {
-            var email = $("#email");
-            if ($(email).val().length < 1) {
-                $("#emailHelp").hide();
-                $("#emailAlert").show(100);
-                $("#emailAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(email).val().length >= 1) {
-                $("#emailAlert").hide(100);
-            }
-            return true;
-        }
-
-        function titleCheck() {
-            let title = $("#title");
-            if ($(title).val().length < 1) {
-                $("#titleAlert").show(100);
-                $("#titleAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(title).val().length >= 1) {
-                $("#titleAlert").hide(100);
-            }
-            return true;
-        }
-
-        function msgCheck() {
-            let msg = $("#msg");
-            if ($(msg).val().length < 1) {
-                $("#msgAlert").show(100);
-                $("#msgAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(msg).val().length >= 1) {
-                $("#msgAlert").hide(100);
-            }
-            return true;
-        }
-
         $(function () {
-            /* if ($(window).width() <= 375) {
-                 window.location.href = "home_mobile.html";
-             } else if ($(window).width() > 375) {
-                 window.location.href = "home.html";
-             }*/
-
-            $(".dropdown-menu").hide();
-            $(".dropdown").mouseenter(function () {
-                $(this).children(".dropdown-menu").stop().slideDown(300);
-            });
-            $(".dropdown").mouseleave(function () {
-                $(this).children(".dropdown-menu").stop().slideUp(300);
-            });
-
-
-            $(".contact_form").hide();
-            $("#contact").click(function () {
-                $(".contact_form").fadeIn(300);
-            });
-
-            $("#nameAlert").hide();
-            $("#emailAlert").hide();
-            $("#titleAlert").hide();
-            $("#msgAlert").hide();
-            $("form").submit(function (e) {
-                if (!nameCheck()) return false;
-                if (!emailCheck()) return false;
-                if (!titleCheck()) return false;
-                if (!msgCheck()) return false;
-            });
-
-            $(".contact_form button:nth-of-type(2)").click(function () {
-                $(".contact_form").hide(100);
-                return false;
-            });
-
+            if ($(window).width() <= 400) {
+                window.location.href = "mobile_version/adopt_mobile.html";
+            }
         })
     </script>
 
@@ -324,6 +231,7 @@
             <button class="btn btn-lg px-4 mt-3">닫기</button>
         </form>
     </div>
+    <div id="overlay"></div>
 
 </body>
 

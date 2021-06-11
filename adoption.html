@@ -11,124 +11,13 @@
     <script src="lib/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="ypap_nav.css">
     <link rel="stylesheet" href="adoption.css">
+    <script src="common_kor.js"></script>
 
     <script>
-        function nameCheck() {
-            var name = $("#user");
-            if ($(name).val().length < 1) {
-                $("#nameAlert").show(100);
-                $("#nameAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(name).val().length >= 1) {
-                $("#nameAlert").hide(100);
-            }
-            return true;
-        }
-
-        function emailCheck() {
-            var email = $("#email");
-            if ($(email).val().length < 1) {
-                $("#emailHelp").hide();
-                $("#emailAlert").show(100);
-                $("#emailAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(email).val().length >= 1) {
-                $("#emailAlert").hide(100);
-            }
-            return true;
-        }
-
-        function titleCheck() {
-            let title = $("#title");
-            if ($(title).val().length < 1) {
-                $("#titleAlert").show(100);
-                $("#titleAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(title).val().length >= 1) {
-                $("#titleAlert").hide(100);
-            }
-            return true;
-        }
-
-        function msgCheck() {
-            let msg = $("#msg");
-            if ($(msg).val().length < 1) {
-                $("#msgAlert").show(100);
-                $("#msgAlert").css({
-                    "color": "red",
-                    "font-size": "12px"
-                });
-                return false;
-            } else if ($(msg).val().length >= 1) {
-                $("#msgAlert").hide(100);
-            }
-            return true;
-        }
-
         $(function () {
             if ($(window).width() <= 400) {
                 window.location.href = "mobile_version/adopt_mobile.html"
             }
-
-            $(".dropdown-menu").hide();
-            $(".dropdown").mouseenter(function () {
-                $(this).children(".dropdown-menu").stop().slideDown(300);
-            });
-            $(".dropdown").mouseleave(function () {
-                $(this).children(".dropdown-menu").stop().slideUp(300);
-            });
-
-            $(".adopt_row_hide").hide();
-            $(".show_more").click(function () {
-                $(".adopt_row_hide:hidden").slice(0, 1).slideDown(300);
-                if ($(".adopt_row_hide:hidden").length === 0) {
-                    $(".show_more").attr("disabled", "true");
-                    $(".show_more").text("더 없음");
-                }
-            });
-
-            $(window).scroll(function () {
-                if ($(window).scrollTop() > 800) {
-                    $(".top_btn").addClass('show')
-                } else {
-                    $(".top_btn").removeClass("show");
-                }
-            });
-
-            $(".top_btn").on('click', function (e) {
-                e.preventDefault();
-                $('html').animate({ scrollTop: 0 }, 100);
-            });
-
-            $(".contact_form").hide();
-            $("#contact").click(function () {
-                $(".contact_form").fadeIn(300);
-            });
-
-            $("#nameAlert").hide();
-            $("#emailAlert").hide();
-            $("#titleAlert").hide();
-            $("#msgAlert").hide();
-            $("form").submit(function (e) {
-                if (!nameCheck()) return false;
-                if (!emailCheck()) return false;
-                if (!titleCheck()) return false;
-                if (!msgCheck()) return false;
-            });
-
-            $(".contact_form button:nth-of-type(2)").click(function () {
-                $(".contact_form").hide(100)
-                return false;
-            });
         })
     </script>
 </head>
@@ -355,7 +244,7 @@
             </div>
         </div>
 
-        <div class="adopt_row_hide row mb-3">
+        <div class="adopt_row hide row mb-3">
             <div class="col-4 text-center">
                 <a href="profile_amaia.html">
                     <div class="img"></div>
@@ -406,7 +295,7 @@
             </div>
         </div>
 
-        <div class="adopt_row_hide row mb-3" id="hatchi">
+        <div class="adopt_row hide row mb-3" id="hatchi">
             <div class="col-4 text-center">
                 <a href="profile_laddie.html">
                     <div class="img"></div>
@@ -531,6 +420,7 @@
             <button class="btn btn-lg px-4 mt-3">닫기</button>
         </form>
     </div>
+    <div id="overlay"></div>
 </body>
 
 </html>
