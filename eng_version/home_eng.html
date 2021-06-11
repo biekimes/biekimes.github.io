@@ -10,7 +10,15 @@
     <script src="../lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
     <script src="../lib/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="home_eng.css">
+    <link rel="stylesheet" href="common_eng.css">
     <script src="common.js"></script>
+    <script>
+        $(function () {
+            if ($(window).width() <= 400) {
+                window.location.href = "../mobile_eng/home_mobile_eng.html"
+            }
+        })
+    </script>
 </head>
 
 <body>
@@ -60,11 +68,11 @@
     </nav>
 
     <div class="container-md">
-        <div class="gallery_title row mb-2">
+        <div class="gallery_title row mb-1">
             <div class="col-4">
                 <h2>Adopt Us!</h2>
             </div>
-            <div class="col-1 offset-7 pt-3">
+            <div class="col-1 offset-7 pt-2">
                 <a href="adoption.html">See More</a>
 
             </div>
@@ -228,7 +236,7 @@
     </div>
 
 
-    <footer>
+    <footer class="mt-5">
         <div class="container">
             <div class="row border-bottom pb-0">
                 <div class="col-9">
@@ -255,7 +263,6 @@
             <div class="contact mt-3">
                 <a href="directions.html" class="link ms-2 me-5 mt-2">Directions</a>
                 <a href="#" class="link mt-2" id="contact">Contact Us</a>
-                <!-- <a class="link mt-2 ms-5" id="mobile_link" href="./mobile_version/home_mobile.html">모바일으로 보기</a> -->
 
                 <a href="https://www.instagram.com/ypap.rescue/" class="social me-2"><img
                         src="../lib/icons/instagram.png" alt=""></a>
@@ -286,11 +293,11 @@
             <textarea name="msg" id="msg" rows="6" class="form-control" placeholder="문의 내용을 적어주세요"></textarea>
             <div id="msgAlert" class="form-text ps-2">문의 내용이 필요합니다.</div>
 
-            <button type="submit" class="btn btn-lg px-4 mt-3">문의내용 제출</button>
+            <button type="submit" class="btn btn-lg px-4 mt-3">Submit</button>
             <button class="btn btn-lg px-4 mt-3">닫기</button>
         </form>
     </div>
-
+    <div id="overlay"></div>
 
 </body>
 

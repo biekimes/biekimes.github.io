@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>용보협 모바일</title>
+    <title>YPAP Mobile</title>
     <link rel="stylesheet" href="../lib/bootstrap-5.0.1-dist/css/bootstrap.css">
     <script src="../lib/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
     <script src="../lib/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="foster_mobile.css">
     <link rel="stylesheet" href="common_mobile.css">
-
 
     <script>
         function nameCheck() {
@@ -113,8 +112,7 @@
             $(".show_more").click(function () {
                 $(".hide:hidden").slice(0, 1).slideDown(200);
                 if ($(".hide:hidden").length === 0) {
-                    $(this).attr("disabled", "true")
-                    $(this).text("더없음")
+                    $(this).attr("disabled", "true");
                 }
             });
 
@@ -163,7 +161,7 @@
 
     <div class="container-sm pt-0">
         <div class="intro row pt-3 mb-4">
-            <h1 class="mb-2 fw-bold">임시보호 필요합니다</h1>
+            <h1 class="mb-2 fw-bold">Fosters Needed</h1>
             <p>아직 입양자를 못 찾아서 시간이 부족해 안락사로 부터 강아지를
                 구할 수 있는 방법 하나는 임시보호입니다. 건강에 문제가 있어
                 치료받는 아이들의 경우 임시보호를 통해 스트레스를 덜
@@ -172,13 +170,13 @@
         </div>
 
         <div class="foster_list">
-            <h2>임시보호가 필요한 아이들</h2>
+            <h2>Foster Us</h2>
             <div class="foster_row row my-3">
                 <div class="gallery col-6">
                     <div class="foster_pic">
                         <dl>
-                            <dt>아름</dt>
-                            <dd>2살</dt>
+                            <dt>Areum</dt>
+                            <dd>2 Years Old</dt>
                         </dl>
 
                         <div class="foster_info p-3 m-0">
@@ -192,8 +190,8 @@
                 <div class="gallery col-6">
                     <div class="foster_pic">
                         <dl>
-                            <dt>미라</dt>
-                            <dd>1살</dt>
+                            <dt>Mira</dt>
+                            <dd>1 Year Old</dt>
                         </dl>
                         <div class="foster_info p-3 m-0">
                             <h3 class="fw-bold">미라 소개</h3>
@@ -209,7 +207,7 @@
                 <div class="gallery col-6">
                     <div class="foster_pic">
                         <dl>
-                            <dt>아름</dt>
+                            <dt>Tutu</dt>
                             <dd>2살</dt>
                         </dl>
 
@@ -224,7 +222,7 @@
                 <div class="gallery col-6">
                     <div class="foster_pic">
                         <dl>
-                            <dt>미라</dt>
+                            <dt>Rusty</dt>
                             <dd>1살</dt>
                         </dl>
                         <div class="foster_info p-3 m-0">
@@ -335,10 +333,10 @@
 
         <div class="row my-4">
             <div class="col-4 offset-4 text-center ">
-                <button class="show_more btn py-2 px-4">더보기</button>
+                <button class="show_more btn py-2 px-4">Expand</button>
             </div>
             <div class="col-2 offset-2">
-                <button class="top_btn pt-3"> 위로 </button>
+                <button class="top_btn pt-3">Top </button>
             </div>
         </div>
     </div>
@@ -346,7 +344,7 @@
     <div class="foster_apply py-3">
         <a href="https://docs.google.com/forms/d/12ODRgbuENmnfMsWoMAnCTljOIkMj8OulvTJxK4hyUSc/viewform?edit_requested=true"
             class="btn px-4 py-2">
-            임시보호 <strong>신청하기 <span class="ms-2">〉</span></strong>
+            Become a <strong>Foster <span class="ms-2">〉</span></strong>
         </a>
     </div>
 
@@ -426,6 +424,7 @@
             <button class="btn btn-lg px-4 mt-2">닫기</button>
         </form>
     </div>
+    <div id="overlay"></div>
 
 
 </body>

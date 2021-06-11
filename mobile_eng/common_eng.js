@@ -97,6 +97,7 @@ $(function () {
     $(".contact_form").hide();
     $("#contact").click(function () {
         $(".contact_form").fadeIn(300);
+        $("#overlay").css("display", "block");
     });
 
     $("#nameAlert").hide();
@@ -112,6 +113,7 @@ $(function () {
 
     $(".contact_form button:nth-of-type(2)").click(function () {
         $(".contact_form").hide(100)
+        $("#overlay").css("display", "none");
         return false;
     });
 
