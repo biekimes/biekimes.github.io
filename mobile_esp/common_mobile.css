@@ -15,8 +15,9 @@ body {
 }
 
 nav {   
-    border-bottom: 5px solid #CCE85C;
+    border-bottom: 5px solid #E85D04;
     font-size: 18px;  
+    background-color: #FFBA08;
 }
 
 a.navbar-brand {
@@ -26,7 +27,7 @@ a.navbar-brand {
 
 .navbar-brand >span {
     font-size: 48px;
- color:#CCE85C;
+ color:#E85D04;
 }
 
 nav .container > span{
@@ -34,27 +35,27 @@ nav .container > span{
 }
 
 .navbar-toggler {
-        box-shadow: 0px 0px 1px 1px #CCE85C;
+        box-shadow: 0px 0px 1px 1px #E85D04;
 }
 
 .navbar-toggler:focus,
 .navbar-toggler:active {
- box-shadow: 0px 0px 1px 3px #CCE85C;
+ box-shadow: 0px 0px 1px 3px #E85D04;
 }
 
 .navbar .container .collapse .dropdown .dropdown-menu{
     display: inline-block;
     box-sizing: border-box;
-    border: 3px solid #CCE85C;
+    border: 3px solid #E85D04;
 }
 
 .dropdown-menu{
-    border: 2px solid #CCE85C;
+    border: 2px solid #E85D04;
     width: 50%;
 }
 
 footer { 
-       background-color: #828282;
+       background-color: #370617;
     font-size: 12px;
     color: #FFFFFF;
 }
@@ -75,11 +76,11 @@ footer a:active{
     font-weight: bold;
     text-decoration: none;
     color: #FFFFFF;  
-    text-shadow: 0px 0px 5px  black;
+    text-shadow: 0px 0px 5px  #FAA307;
 }
 
 footer .contact .link:active{
-    text-shadow: 0px 0px 5px  black;
+    text-shadow: 0px 0px 5px  #FAA307;
 }
 
 .contact .social {
@@ -95,14 +96,14 @@ footer .contact .link:active{
     border-radius: 50%;
     width: 40px;
     height: 40px;   
-    box-shadow: 0px 0px 5px 2px  black;
+    box-shadow: 0px 0px 5px 2px  #FAA307;
 }
 
 .contact_form { 
    width: 100%;
-    border: 1px solid #747E48;
+    border: 1px solid #370617;
     border-radius: 15px;
-    background-color: #eefcb6f3;    
+    background-color: #faa507dc;    
     z-index: 2;
 
      position: fixed;
@@ -124,17 +125,20 @@ footer .contact .link:active{
 
 .contact_form button {
     font-size: 16px;
-    border: 1px solid #747E48;
-    border-radius: 10px;
-  
-}
+    border: 1px solid #370617;
+    border-radius: 10px;   
+  }
+
+  .contact_form button:focus{
+      box-shadow: 0px 0px 3px 3px #E85D04;
+  }
 
 .contact_form button:nth-of-type(2) {
     float: right;
 }
 
 .contact_form button:active{
-    background-color:#bcd363;
+    background-color:#FFBA08;
 }
 
 
@@ -161,7 +165,7 @@ footer .contact .link:active{
 .flag_container div:active{
     transform: scale(1.015);
     border-radius: 10px;
-    box-shadow: 0px 0px 4px 3px  black;
+    box-shadow: 0px 0px 4px 3px  #FAA307;
 }
 
 #overlay {
