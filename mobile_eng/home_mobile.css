@@ -47,7 +47,7 @@
 }
 
 .banner {   
-    height: 100px;
+    /* height: 120px; */
     background-image: url('../lib/img/dogbanner2.jpg');
     background-size: 150%;
     background-repeat: no-repeat;
@@ -70,9 +70,9 @@ background: linear-gradient(90deg, rgba(204,232,92,1) 0%, rgba(204,232,92,0.5) 6
 }
 
 .banner article button {
-    width: 180px;
-    height: 40px;
-    font-size: 20px;
+    /* width: 180px;
+    height: 60px; */
+    font-size: 22px;
     background-color: #FFFFFF;
     border-radius: 28px;
     border: none;     
@@ -88,7 +88,7 @@ background: linear-gradient(90deg, rgba(204,232,92,1) 0%, rgba(204,232,92,0.5) 6
 }
 
 .foster_look button {
-    font-size: 16px;  
+    font-size: 20px;  
     width: 80%;
     height: 50px;    
     background: #CCE85C;
