@@ -73,6 +73,14 @@ nav .container > span{
     background-repeat: no-repeat;
 }
 
+/* .carousel-item .img{
+    width: 100%;
+} */
+
+.carousel-item .img {
+    background-image: url('../lib/fotos_de_ypap/arnie1.jpg');
+}
+
 
  .gallery_img:first-of-type .img{
     background-image: url('../lib/fotos_de_ypap/arnie1.jpg');
