@@ -59,15 +59,15 @@ header button:active {
 
 .adopt_list >div:first-of-type .img {
     background-position: 0px -90px;
-    background-image: url('../lib/fotos_de_ypap/arnie1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633791/dogs%20of%20ypap/arnie1.jpg');
 }
 .adopt_list >div:nth-of-type(2) .img {
     background-position: 0px -90px;
-    background-image: url('../lib/fotos_de_ypap/buddy1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633797/dogs%20of%20ypap/buddy1.jpg');
 }
 .adopt_list >div:nth-of-type(3) .img {
     background-position: 0px -60px;
-    background-image: url('../lib/fotos_de_ypap/chonks1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/chonks1_pvmaa4.jpg');
 }
 
 #jelly .img{

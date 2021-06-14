@@ -72,7 +72,7 @@ font-size: 20px;
 }
 
 .adopt_row .col-4:first-of-type .img {
-    background-image: url('lib/fotos_de_ypap/arnie1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633791/dogs%20of%20ypap/arnie1.jpg');
 }
 .adopt_row .col-4:nth-of-type(2) .img {
     background-image: url('lib/fotos_de_ypap/buddy1.jpg');
@@ -83,7 +83,7 @@ font-size: 20px;
 }
 
 .adopt_row:nth-of-type(2) .col-4:first-of-type .img {
-    background-image: url('lib/fotos_de_ypap/jelly1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633770/dogs%20of%20ypap/jelly1_bnn4y4.jpg');
 }
 .adopt_row:nth-of-type(2) .col-4:nth-of-type(2) .img {
     background-image: url('lib/fotos_de_ypap/kookie1.jpg');

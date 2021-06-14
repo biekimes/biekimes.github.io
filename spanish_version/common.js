@@ -72,8 +72,11 @@ $(function () {
         $(this).children(".dropdown-menu").stop().slideUp(300);
     });
 
-    var max = 8;
-    var width = 220;
+    console.log($(".img").width())
+    console.log($(".gallery_img").width())
+
+    var max = 6;
+    var width = $(".gallery_img").width();
     var index = 0;
     var sw = 1;
     var flag = setInterval(function () {

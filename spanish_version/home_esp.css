@@ -12,12 +12,10 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-nav {
-    width: 100%;
-    height: 90px;
+nav {      
     border-bottom: 5px solid #CCE85C;
     font-size: 15px;
-    margin-bottom: 70px;
+    
 }
 
 .navbar-brand {
@@ -32,20 +30,18 @@ nav {
 nav .container > span{
     font-size: 15px;
 }
+
 .nav-item{
-    width: 160px;
+    transition: 300ms;
+}
+.nav-item:hover {
+    text-shadow: 0px 0px 10px #828282;
 }
 
 .navbar .container .collapse .dropdown .dropdown-menu{
     display: inline-block;
     box-sizing: border-box;
     border: 3px solid #CCE85C;
-}
-
-
-.container-md {
-    width: 1100px;
-    overflow: hidden;
 }
 
 .gallery_title h2, .gallery_title a{
@@ -64,27 +60,21 @@ nav .container > span{
     color: black;
 }
 
-.gallery_img{
-    margin-right: 40px;
-    border: 5px solid #FFFFFF;
-    box-sizing: border-box;
+/* .gallery_img{      
  width: 180px;  
-}
-
-.gallery_img img {
-    width: 180px;
-    height: 180px;
-}
+} */
 
 .gallery_img .img {
-    width: 180px;
-    height: 180px;
+    width: 12em;
+    height: 12em;
+    border-right: 12px solid #FFFFFF;
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.gallery_img:first-of-type .img{
+
+ .gallery_img:first-of-type .img{
     background-image: url('../lib/fotos_de_ypap/arnie1.jpg');
 }
 .gallery_img:nth-of-type(2) .img{
@@ -119,8 +109,7 @@ nav .container > span{
 }
 .gallery_img:nth-of-type(12) .img{
     background-image: url('../lib/fotos_de_ypap/max1.jpg');
-    
-}
+    } 
 
 
 .gallery {
