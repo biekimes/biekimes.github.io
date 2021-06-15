@@ -178,7 +178,7 @@ nav .container > span{
 
 .banner article p:last-child{
     font-size: 14px;
-    color: #747E48;
+    color: #000000;
 }
 
 .banner button {   
@@ -212,8 +212,7 @@ nav .container > span{
     background-color: #EEFCB6;
 }
 
-.fosters .img {
-    background-image: url('../lib/img/dog18.jpg');
+.fosters .img {   
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -223,24 +222,31 @@ nav .container > span{
     color: #FFFFFF;  
 }
 
-@media (max-width: 1200px) { 
-    
+@media (max-width: 1200px) {     
     .fosters{
         margin-top: 1.5em;
         text-align: center;
     }
-    .fosters .img {
-        display: block;
+    .fosters .img {       
         width: 12em;
         height: 12em;
     }
- }
+}
 
+.fosters:first-of-type .img{
+    background-image: url('../lib/img/dog17.jpg');  
+}
  .fosters:nth-of-type(2) .img  {
     background-image: url('../lib/img/dog17.jpg');
 }
 .fosters:nth-of-type(3) .img {
-    background-image: url('../lib/img/dog16.jpg');
+    background-image: url('../lib/img/dog16.jpg');    
+}
+.fosters:nth-of-type(4) .img {   
+    background-image: url('../lib/img/dog15.jpg');
+}
+.fosters:nth-of-type(5) .img {   
+    background-image: url('../lib/img/dog13.jpg');
 }
 
 @media (max-width: 768px) {
