@@ -60,9 +60,6 @@ function msgCheck() {
 }
 
 $(function () {
-    if ($(window).width() <= 400) {
-        window.location.href = "../mobile_eng/home_mobile_eng.html"
-    }
 
     $(".dropdown-menu").hide();
     $(".dropdown").mouseenter(function () {

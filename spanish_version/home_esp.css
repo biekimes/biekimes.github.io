@@ -14,8 +14,7 @@ body {
 
 nav {      
     border-bottom: 5px solid #CCE85C;
-    font-size: 15px;
-    
+    font-size: 15px;    
 }
 
 .navbar-brand {
@@ -31,10 +30,10 @@ nav .container > span{
     font-size: 15px;
 }
 
-.nav-item{
+.nav-item a{
     transition: 300ms;
 }
-.nav-item:hover {
+.nav-item a:hover {
     text-shadow: 0px 0px 10px #828282;
 }
 
@@ -78,27 +77,63 @@ nav .container > span{
 } */
 
 .carousel-item .img {
-    background-image: url('../lib/fotos_de_ypap/arnie1.jpg');
+    width: 100%;
+    height: 400px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 1px solid black;
 }
+.carousel-item:first-of-type .img {  
+    background-size: 160%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633792/dogs%20of%20ypap/arnie2.jpg');
+}
+.carousel-item:nth-of-type(2) .img {
+    background-position: 0px -50px;
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633765/dogs%20of%20ypap/amaia1.jpg');
+}
+.carousel-item:nth-of-type(3) .img {
+    background-size: 120%;
+    background-position: 0px -100px;
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633765/dogs%20of%20ypap/buddy1.jpg');
+}
+.carousel-item:nth-of-type(4) .img {
+    background-position: 0px -60px;
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633765/dogs%20of%20ypap/chonks1.jpg');
+}
+.carousel-item:nth-of-type(5) .img {
+    background-position: 0px -50px;
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633765/dogs%20of%20ypap/jelly1.jpg');
+}
+.carousel-item:nth-of-type(6) .img {
+    background-position: 0px -50px;
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633765/dogs%20of%20ypap/kookie1.jpg');
+}
+.carousel-item:nth-of-type(7) .img {
+    background-position: 0px -50px;
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633765/dogs%20of%20ypap/nike1.jpg');
+}
+
 
 
  .gallery_img:first-of-type .img{
-    background-image: url('../lib/fotos_de_ypap/arnie1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633792/dogs%20of%20ypap/arnie1.jpg');
 }
 .gallery_img:nth-of-type(2) .img{
-    background-image: url('../lib/fotos_de_ypap/chonks1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633792/dogs%20of%20ypap/chonks1.jpg');
 }
 .gallery_img:nth-of-type(3) .img{
-    background-image: url('../lib/fotos_de_ypap/buddy1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633792/dogs%20of%20ypap/buddy1.jpg');
 }
 .gallery_img:nth-of-type(4) .img{
-    background-image: url('../lib/fotos_de_ypap/jelly1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633792/dogs%20of%20ypap/jelly1.jpg');
 }
 .gallery_img:nth-of-type(5) .img{
-    background-image: url('../lib/fotos_de_ypap/kookie1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633792/dogs%20of%20ypap/kookie1.jpg');
 }
 .gallery_img:nth-of-type(6) .img{
-    background-image: url('../lib/fotos_de_ypap/nike1.jpg');
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633792/dogs%20of%20ypap/nike1.jpg');
 }
 .gallery_img:nth-of-type(7) .img{
     background-image: url('../lib/fotos_de_ypap/paul1.jpg');
@@ -119,29 +154,20 @@ nav .container > span{
     background-image: url('../lib/fotos_de_ypap/max1.jpg');
     } 
 
-
-.gallery {
+/* .gallery {
     width: 1100px;
-}
+} */
 
-
-.banner {
-    margin-top: 86px;   
-    height: 177px;
+.banner {   
     background-image: url('../lib/img/dogbanner2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 150px -350px;
+    background-position:-30%;
 }
 
-.banner article {
-    display: inline-block;
-    padding-left: 100px; 
-    padding-top: 53px;
-    height: 177px; 
-    width: 60%; 
+.banner .row {        
     background: rgb(204,232,92);
-    background: linear-gradient(90deg, rgba(204,232,92,1) 0%, rgba(204,232,92,1) 73%, rgba(204,232,92,0) 100%);
+    background: linear-gradient(90deg, rgba(204,232,92,1) 0%, rgba(204,232,92,0.2) 63%, rgba(204,232,92,0) 100%);
 }
 
 .banner article p:first-child{
@@ -155,17 +181,11 @@ nav .container > span{
     color: #747E48;
 }
 
-.banner button {
-    width: 180px;
-    height: 50px;
-    font-size: 19px;
+.banner button {   
+    font-size: 20px;
     background-color: #FFFFFF;
     border-radius: 28px;
-    border: none;
-
-    position: relative;
-   right: -200px;
-   bottom:15px;
+    border: none;  
    transition: 300ms;
 }
 
@@ -175,54 +195,60 @@ nav .container > span{
     box-sizing: border-box;
 }
 
-.foster_look {
-    margin-top: 75px;
-}
 
-.foster_look section {
-    display: inline-block;
-}
+.foster_nav h2{
+    font-size: 28px;   
+    color: #C2C2C2;  }
 
-.foster_look section:first-child h2{
-    font-size: 28px;
-    font-weight: bold;
-    color: #C2C2C2;
-    width: 254px;
-}
-
-.foster_look section:first-child button {
-    width: 282px;
-    height: 60px;    
+.foster_nav button {  
+    font-size: 20px;   
     background: #CCE85C;
-    border-radius: 5px;
+    width: 12em;
     border: none;
     transition: 300ms;
 }
 
-.foster_look section:first-child button:hover{
+.foster_nav button:hover{
     background-color: #EEFCB6;
 }
-.fosters {
-    margin-left: 150px;
-}
+
 .fosters .img {
     background-image: url('../lib/img/dog18.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    text-align: center;
-    color: #FFFFFF;
-    padding-top: 130px;
+    width: 14em;
+    height: 14em;
+    border-radius: 50%;    
+    color: #FFFFFF;  
 }
 
-.fosters .col-4:nth-of-type(2) .img {
+@media (max-width: 1200px) { 
+    
+    .fosters{
+        margin-top: 1.5em;
+        text-align: center;
+    }
+    .fosters .img {
+        display: block;
+        width: 12em;
+        height: 12em;
+    }
+ }
+
+ .fosters:nth-of-type(2) .img  {
     background-image: url('../lib/img/dog17.jpg');
 }
-.fosters .col-4:nth-of-type(3) .img {
+.fosters:nth-of-type(3) .img {
     background-image: url('../lib/img/dog16.jpg');
+}
+
+@media (max-width: 768px) {
+    .fosters .img {
+        display: block;
+        width: 10em;
+        height: 10em;
+    }
 }
 
 .vol_look{    
