@@ -129,7 +129,7 @@ $(function () {
 
     $(".contact_form button:nth-of-type(2)").click(function () {
         $(".contact_form").hide(100);
-        $("#overlay").css("display", "none")
+        $("#overlay").css("display", "none");
         return false;
     });
 
