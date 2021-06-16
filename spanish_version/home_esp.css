@@ -266,6 +266,9 @@ nav .container > span{
         box-sizing: border-box;
         background-color: #c2c2c2;
     }
+    .banner article p:first-child{
+        font-size: 20px;
+    }
 }
 
 .vol_look .cardy {     
@@ -312,19 +315,18 @@ footer p a {
 
 footer .contact .link {
     text-decoration: none;
-    color: #FFFFFF;
-    /* float: left; */
+    color: #FFFFFF;   
     transition: 300ms;
 }
 
-footer .contact .link:hover {
+footer .contact .link:hover,
+footer .contact .link:active {
  color: #C2C2C2;
 }
 
 .contact .social {
     width: 40px;
-    height: 40px;
-    float: right;
+    height: 40px;   
 }
 
 .social img {
@@ -333,7 +335,8 @@ footer .contact .link:hover {
     transition: 300ms;
 }
 
-.social img:hover {
+.social img:hover,
+social img:active {
 transform: translateY(-2px);
 }
 
@@ -361,6 +364,12 @@ transform: translateY(-2px);
 
 .flag_container div:hover{
     transform: translateY(-2px);
+}
+
+@media (max-width: 990px) {
+    .contact > div:first-child {
+        border-bottom: 1px solid #ECECEC;
+    }
 }
 
 .contact_form { 
