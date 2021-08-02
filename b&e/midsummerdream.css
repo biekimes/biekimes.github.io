@@ -1,0 +1,262 @@
+body {
+    background-color: #e4d8c0;
+}
+
+.container {
+   margin: 0 auto;
+    width: 900px;
+}
+
+
+.pic {
+    border: 0.4em solid white;
+    box-shadow: 1px 1px 5px rgb(172, 172, 172);
+    transition: 250ms;
+}
+
+.pic:hover, .pic:active {
+    cursor: pointer;
+    border: 0.5em solid rgb(236, 65, 228);   
+}
+
+.pic:nth-of-type(2n):hover, .pic:nth-of-type(2n):active{
+    border: 0.5em solid rgb(83, 248, 17);   
+}
+
+.row1 div:first-child {
+    display: inline-block;
+    width: 10em;
+    height: 13em;
+
+    transform: rotate(-10deg) translate(10px, 10px);
+    position: relative;
+    z-index: 10;
+
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465846/midsummer2021/bme1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row1 div:nth-of-type(2) {
+    display: inline-block;
+    width: 11em;
+    height: 14em;
+    transform: rotate(5deg) translate(10px, 30px);
+    position: relative;
+    z-index: 7;
+
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465846/midsummer2021/1strow2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row1 div:nth-of-type(3) {
+    display: inline-block;
+    width: 13em;
+    height: 15em;
+    transform: translate(-20px, 70px);
+    position: relative;
+    z-index: 6;
+
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/1strow3_1.jpg);
+    background-position: center -40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row1 div:nth-of-type(4) {
+    display: inline-block;
+    width: 11em;
+    height: 14em;
+    transform: translate(-80px, 55px) rotate(-8deg);
+    position: relative;
+    z-index: 10;
+
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/bme2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row2 .pic:first-of-type {
+    display: inline-block;
+    width: 14em;
+    height: 17em;
+    transform: translate(10px, 10px);
+    position: relative;
+    z-index: 10;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/2ndrow1.jpg);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.row2 .pic:nth-of-type(2) {
+    display: inline-block;
+    width: 18em;
+    height: 24em;
+    transform: translate(0px, -210px) rotate(4deg);
+    position: relative;
+    z-index: 9;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/2ndrow2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row2 .pic:nth-of-type(3) {
+    display: inline-block;
+    width: 10em;
+    height: 14em;
+    transform: translate(-10px, -30px) rotate(2deg);
+    position: relative;
+    z-index: 11;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/2ndrow3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row2 div:nth-of-type(2) p {
+       font-family: 'Indie Flower', cursive;
+    color: #ffffff;
+    font-size: 2.5em;
+    position: relative;
+    transform: rotate(-8deg);
+    top: 6em;
+    left: 4.3em;
+}
+
+.row3 div:first-of-type{
+    display: inline-block;
+    width: 14em;
+    height: 20em;
+    transform: rotate(4deg);
+    position: relative;
+    top: -330px;
+    left:-17px;
+    z-index: 12;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/3rdrow1.jpg);
+    background-position: center;
+    background-size: 180%;
+    background-position: center -200px;
+    background-repeat: no-repeat;
+}
+.row3 div:nth-of-type(2){
+    display: inline-block;
+    width: 19em;
+    height: 13em;
+    transform: rotate(2deg);
+    position: relative;
+    top: -350px;
+    left:-60px;
+    z-index: 12;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/3rdrow2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row3 div:nth-of-type(3){
+    display: inline-block;
+    width: 8em;
+    height: 11em;
+    transform: rotate(-8deg);
+    position: relative;
+    top: -340px;
+    left:-120px;
+    z-index: 13;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627743052/midsummer2021/3rdrow3.1.jpg);
+    background-position: center;
+    background-size: 120%;
+    background-repeat: no-repeat;
+}
+.row3 div:nth-of-type(4){
+    display: inline-block;
+    width: 11em;
+    height: 14em;
+    transform: rotate(1deg) scaleX(-1);
+    position: relative;
+    top: -430px;
+    left:-180px;
+    z-index: 12;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/3rdrow4.jpg);
+    background-position: 0px center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row4 div:nth-of-type(1){
+    display: inline-block;
+    width: 12em;
+    height: 15em;
+    transform: rotate(-4deg);
+    position: relative;
+    top: -330px;
+    left:10px;
+    z-index: 12;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/4throw1.jpg);
+    background-position: 0px center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.row4 div:nth-of-type(2){
+    display: inline-block;
+    width: 8em;
+    height: 11em;
+    transform: rotate(-5deg);
+    position: relative;
+    top: -420px;
+    left:-9px;
+    z-index: 13;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/4throw2.jpg);
+    background-position:  center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.row4 div:nth-of-type(3){
+    display: inline-block;
+    width: 10em;
+    height: 11em;
+    transform: rotate(-4deg);
+    position: relative;
+    top: -420px;
+    left:-20px;
+    z-index: 12;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/4throw3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.row4 div:nth-of-type(4){
+    display: inline-block;
+    width: 12em;
+    height: 15em;
+    transform: rotate(3deg);
+    position: relative;
+    top: -360px;
+    left:-30px;
+    z-index: 10;
+    background-image: url(https://res.cloudinary.com/biekimes/image/upload/v1627465798/midsummer2021/4throw4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.texto {
+    font-family: 'Satisfy', cursive;
+    text-align: center;
+  
+}
+
+.texto p {
+    color: #574f44;
+    font-size: 20px;
+    line-height: 10px;
+    text-align: center;
+    position: relative;
+    top: -410px;
+    left:-90px
+}

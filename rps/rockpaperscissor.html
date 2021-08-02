@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <script src="/rps/library/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="rockpaperscissor.css">
+
+</head>
+
+<body>
+    <div class="select">
+        <h3>Choose Your Hand</h3>
+        <div class="hand_container">
+            <label for="rock">Rock</label>
+            <div class="hand rock" id="rock"></div>
+        </div>
+
+        <div class="hand_container">
+            <label for="paper">Paper</label>
+            <div class="hand paper" id="paper"></div>
+        </div>
+
+        <div class="hand_container">
+            <label for="scissors">Scissors</label>
+            <div class="hand scissors" id="scissors"></div>
+        </div>
+    </div>
+
+    <div class="set">
+        <div class="play_container">
+            <p>Player</p>
+            <div id="playerHand"></div>
+        </div>
+        <div class="play_container">
+            <p>Computer</p>
+            <div id="compHand"></div>
+        </div>
+    </div>
+
+    <div id="result"></div>
+
+    <button>Play Again</button>
+
+    <script>
+        const choice = ["rock", "paper", "scissors"];
+        function compPlay() {
+            return choice[Math.floor(Math.random() * 3)];
+        }
+
+        let draw = "It's a draw. Play Again!";
+        let win = "You Win!"
+        let lose = "You lose..."
+
+        $(function () {
+            $("#rock").click(function () {
+                $(".play_container div").removeClass();
+                let algo = compPlay();
+                $("#playerHand").addClass("rock");
+                if (algo === "rock") {
+                    $("#compHand").addClass("rock")
+                    $("#result").html(draw);
+                } else if (algo === "paper") {
+                    $("#compHand").addClass("paper")
+                    $("#result").html(`${algo} beats rock. ` + lose);
+                } else if (algo === "scissors") {
+                    $("#compHand").addClass("scissors")
+                    $("#result").html(`Rock beats ${algo}. ` + win);
+                }
+            });
+
+            $("#paper").click(function () {
+                $(".play_container div").removeClass();
+                let algo = compPlay()
+                $("#playerHand").addClass("paper");
+                if (algo === "paper") {
+                    $("#compHand").addClass("paper")
+                    $("#result").html(draw);
+                } else if (algo === "scissors") {
+                    $("#compHand").addClass("scissors")
+                    $("#result").html(`${algo} beats paper. ` + lose);
+                } else if (algo === "rock") {
+                    $("#compHand").addClass("rock")
+                    $("#result").html(`Paper beats ${algo}. ` + win);
+                }
+            });
+
+            $("#scissors").click(function () {
+                $(".play_container div").removeClass();
+                let algo = compPlay()
+                $("#playerHand").addClass("scissors");
+                if (algo === "scissors") {
+                    $("#compHand").addClass("scissors")
+                    $("#result").html(draw);
+                } else if (algo === "rock") {
+                    $("#compHand").addClass("rock")
+                    $("#result").html(`${algo} beats scissors. ` + lose);
+                } else if (algo === "paper") {
+                    $("#compHand").addClass("paper")
+                    $("#result").html(`Scissors beats ${algo}. ` + win);
+                }
+            });
+
+            $("button").click(function () {
+                $(".play_container div").removeClass();
+                $("#result").html("");
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>
