@@ -1,23 +1,29 @@
 body{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #fee440;
 }
 
-.select {
-    width: 500px;
+.container {
+    margin: 20px auto;
+    width: 60%;
+}
+
+    
+
+.select {     
     border: 1px solid grey;
     text-align: center;
     box-sizing: border-box;
+    background-color: #00f5d4;
 }
 
-.select h3 {
-    font-size: 28px;
-}
+
 
 .hand_container {
     font-size: 22px;
     display: inline-block;
     text-align: center;
-    width: 120px;
+    /* width: 120px; */
     transition: 250ms;
 }
 .select .hand {
@@ -40,18 +46,21 @@ body{
 
 .rock {
     background-image: url('/rps/img/rock.png');
+
 }
 .paper {
     background-image: url('/rps/img/paper.png');
 }
 .scissors{
     background-image: url('/rps/img/scissors.png');
+    transform: rotate(90deg);
 }
 
 .set {
+    background-color: #00bbf9;
     padding-bottom: 5px;
     font-size: 22px;
-    width: 500px;
+  
     border: 1px solid grey;
     text-align: center;
     box-sizing: border-box;
@@ -59,7 +68,7 @@ body{
 
 .play_container {
     display: inline-block;
-    width: 180px;
+    /* width: 180px; */
 
 }
 .play_container div {
@@ -72,25 +81,53 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 }
+
+#playerHand {
+    background-color: #92d8f0;
+}
 #compHand{
-    background-color: rgb(233, 233, 233);
+    background-color: #49adce;
 }
 #result {
+    color: #3d235e;
+    background-color: #bd9ae7;
     box-sizing: border-box;
     font-size: 20px;
     line-height: 50px;
     text-align: center;
-    width: 500px;
+   
     height: 50px;
     border: 1px solid grey;
 }
 
 button{
+    background-color: #f15bb5;
+    border: 4px offset #63438a;
     height: 50px;
-    width: 500px;
+    width: 100%;
     font-size: 18px;
 }
 
 button:hover{
     cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    .hand_container .hand {
+        width: 70px;
+        height: 70px;
+    }
+    .hand_container label {
+        font-size: 18px;
+    }
+    .play_container div {
+        width: 80px;
+        height: 80px;
+    }
+    .play_container p {
+        font-size: 20px;
+    }
 }

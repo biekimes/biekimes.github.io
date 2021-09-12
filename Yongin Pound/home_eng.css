@@ -1,0 +1,466 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(lib/fonts/Roboto-Medium.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+nav {
+    width: 100%;
+    height: 90px;
+    border-bottom: 5px solid #CCE85C;
+    font-size: 15px;
+    margin-bottom: 70px;
+}
+
+.navbar-brand {
+    font-size: 52px;
+}
+
+.navbar-brand >span {
+    font-size: 52px;
+ color:#CCE85C;
+}
+
+nav .container > span{
+    font-size: 15px;
+}
+
+
+.navbar .container .collapse .dropdown .dropdown-menu{
+    display: inline-block;
+    box-sizing: border-box;
+    border: 3px solid #CCE85C;
+}
+
+/* .navbar-toggler {
+    border: 3px solid #CCE85C;
+}
+.navbar-toggler:focus {
+    border: 3px solid #CCE85C;
+} */
+
+@media screen and (max-width:991px) {
+    .navbar-nav {
+        background-color: #ffffffc4;
+        width: 200px;
+        border: 4px solid #CCE85C;
+        float: right;
+    }
+}
+
+.gallery_container {
+    width: 1100px;
+    overflow: hidden;
+}
+
+.gallery_title h2, .gallery_title a{
+    display: inline-block;
+}
+.gallery_title h2 {    
+    font-size: 28px;
+    color: #c2c2c2;
+}
+.gallery_title a{
+    font-size: 15px;
+    text-decoration: none;
+    color: #828282;
+}
+.gallery_title a:hover{
+    color: black;
+}
+
+.gallery_img{
+    margin-right: 40px;
+    border: 5px solid #FFFFFF;
+    box-sizing: border-box;
+ width: 180px;  
+}
+
+.gallery_img img {
+    width: 180px;
+    height: 180px;
+}
+
+.gallery_img .img {
+    width: 180px;
+    height: 180px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gallery_img:first-of-type .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633791/dogs%20of%20ypap/arnie1.jpg');
+}
+.gallery_img:nth-of-type(2) .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/chonks1.jpg');
+}
+.gallery_img:nth-of-type(3) .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/buddy1.jpg');
+}
+.gallery_img:nth-of-type(4) .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/jelly1.jpg');
+}
+.gallery_img:nth-of-type(5) .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633778/dogs%20of%20ypap/kookie1.jpg');
+    background-position: 0 -50px;
+}
+.gallery_img:nth-of-type(6) .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/nike1.jpg');
+}
+.gallery_img:nth-of-type(7) .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/paul1.jpg');
+}
+.gallery_img:nth-of-type(8) .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/woody2.jpg');
+}
+.gallery_img:nth-of-type(9) .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/cujo1.jpg');
+}
+.gallery_img:nth-of-type(10) .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/aloe1.jpg');
+}
+.gallery_img:nth-of-type(11) .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/amaia1.jpg');
+}
+.gallery_img:last-of-type .img{
+    background-image: url('https://res.cloudinary.com/biekimes/image/upload/v1623633806/dogs%20of%20ypap/max1.jpg');
+}
+
+.gallery {
+    width: 1100px;
+}
+
+#carousel {
+    z-index: -1;
+}
+
+.carousel-caption {
+    font-size: 16px;
+}
+
+.banner {
+    /* margin-top: 86px;   
+    height: 177px; */
+    background-image: url('lib/img/dogbanner2.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50px -350px;
+}
+
+@media screen and (max-width:1400px) {
+    .banner{
+        background-position: 100px -300px;
+    }
+}
+@media screen and (max-width:1200px) {
+    .banner{
+        background-position: 100px -260px;
+    }
+}
+@media screen and (max-width:992px) {
+    .banner{
+        background-position: 100px -190px;
+    }
+}
+    
+@media screen and (max-width:768px) {
+    .banner{
+        background-position: 100px -100px;
+    }
+    .banner article p:first-of-type {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:576px) {
+    .banner{
+        background-position: 100px -20px;
+    }
+    .banner article p:first-of-type {
+        font-size: 10px;
+    }
+}
+
+
+.banner article {
+    display: inline-block;
+    /* padding-left: 100px; 
+    padding-top: 53px;
+    height: 177px;  */
+    width: 60%; 
+    background: rgb(204,232,92);
+    background: linear-gradient(90deg, rgba(204,232,92,1) 0%, rgba(204,232,92,1) 73%, rgba(204,232,92,0) 100%);
+}
+
+.banner article p:first-child
+{
+    font-size: 24px;
+    font-weight: bold;
+    color: #747E48;
+}
+
+.banner article p:last-child
+{
+    font-size: 14px;
+    color: #747E48;
+}
+
+
+.banner button,
+.banner_sm button {   
+    font-size: 19px;
+    background-color: #FFFFFF;
+    border-radius: 28px;
+    border: none;
+
+   transition: 300ms;
+}
+
+.banner_sm article {
+    display: inline-block;
+    /* padding-left: 100px; 
+    padding-top: 53px;
+    height: 177px;  */
+    width: 100%; 
+    background: rgb(205,232,92);
+    background: linear-gradient(0deg, rgba(205,232,92,1) 0%, rgba(205,232,92,0.7455357142857143) 35%, rgba(205,232,92,0.4206057422969187) 67%, rgba(205,232,92,0) 100%);
+}
+
+.banner_sm {
+    /* margin-top: 86px;   
+    height: 177px; */
+    background-image: url('lib/img/dogbanner2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50px -20px;
+}
+
+
+.banner button:hover,
+.banner_sm button:focus {
+    background-color: #ECECEC;
+    border: 1px solid #747E48;
+    box-sizing: border-box;
+}
+
+/* .foster_look {
+    margin-top: 75px;
+} */
+
+/* .foster_look section {
+    display: inline-block;
+} */
+.foster_look {
+    width: 90%;
+}
+.foster_look section:first-child h2{
+    font-size: 28px;
+    font-weight: bold;
+    color: #C2C2C2;
+    width: 254px;
+}
+
+.foster_look section:first-child button {
+    width: 282px;
+    height: 60px;    
+    background: #CCE85C;
+    border-radius: 5px;
+    border: none;
+    transition: 300ms;
+}
+
+.foster_look section:first-child button:hover{
+    background-color: #EEFCB6;
+}
+/* .fosters {
+    margin-left: 150px;
+} */
+.fosters .img {
+      background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 130px;
+}
+
+.fosters .img:first-of-type {
+    background-image: url('lib/img/dog18.jpg');
+}
+
+.fosters .img:nth-of-type(2) {
+    background-image: url('lib/img/dog17.jpg');
+}
+.fosters .img:nth-child(3)  {
+    background-image: url('lib/img/dog16.jpg');
+}
+.fosters .img:nth-child(4){
+    background-image: url('lib/img/dog15.jpg');
+}
+
+.vol_look section {   
+   
+    background: #FFFFFF;
+    border: 1px solid #C2C2C2;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.vol_look section p {
+    width: 60%;
+}
+
+.vol_look section button{    
+    width: 90px;
+    height: 90px;
+    background: #EEFCB6;
+    border: none;
+    border-radius: 50%;
+    transition: 300ms;
+    /* position: relative;
+    top:-20px;
+    right: -130px; */
+}
+
+.vol_look section button:hover,
+.vol_look section button:focus
+ {
+    background: #CCE85C;
+}
+
+footer {
+    width: 100%;
+    /* height: 184px;
+    margin-top: 88px;
+    padding-top: 58px;   */
+    background-color: #828282;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+footer p {
+    width: 100%;   
+}
+
+footer p a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+footer .contact .link {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: 300ms;
+}
+
+footer .contact .link:hover,
+footer .contact .link:focus {
+ color: #C2C2C2;
+}
+
+.contact .social {
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+
+.social img {
+    width: 40px;
+    height: 40px;
+    transition: 300ms;
+}
+
+.social img:hover,
+.social img:focus{
+transform: translateY(-2px);
+}
+
+.flag_link {
+    transform: translateY(-15px);
+}
+
+.flag_container div{
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: 300ms;
+}
+.eng{
+    background-image: url('lib/icons/eng_flag.png');
+}
+.kor{
+    background-image: url('lib/icons/south-korea.png');
+}
+.esp{
+    background-image: url('lib/icons/esp_flag.png');
+}
+
+.flag_container div:hover,
+.flag_container div:focus{
+    transform: translateY(-2px);
+}
+
+.contact_form {    
+    border: 1px solid #747E48;
+    border-radius: 15px;
+    background-color: #eefcb6f3;    
+    z-index: 1;
+
+    position: fixed;
+    width: 60%;
+    top: 100px;
+    left: calc(20%);
+}
+
+@media screen and (max-width:768px){
+    .contact_form {
+        width: 90%;
+        top: 80px;
+    left: calc(5%);
+    }
+}
+
+.contact_form h3{
+    font-size: 24px;
+    text-align: center;
+}
+
+.contact_form label {
+    font-size: 19px;
+}
+#emailHelp {
+    font-size: 12px;
+}
+
+.contact_form button {
+    font-size: 19px;
+    border: 1px solid #747E48;
+    border-radius: 10px;
+    transition: 300ms;
+}
+.contact_form button:nth-of-type(2) {
+    float: right;
+   
+}
+.contact_form button:hover,
+.contact_form button:focus{  
+    text-shadow: 0px 1px 1px #747E48; 
+    background-color: #e1f398;
+}
+
+.blurEffect {
+    filter: blur(10px);
+}

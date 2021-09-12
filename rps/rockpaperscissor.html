@@ -6,44 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="bootstrap-5.0.1-dist/css/bootstrap.css">
+    <script src="bootstrap-5.0.1-dist/js/bootstrap.js"></script>
     <script src="/rps/library/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="rockpaperscissor.css">
 
 </head>
 
 <body>
-    <div class="select">
-        <h3>Choose Your Hand</h3>
-        <div class="hand_container">
-            <label for="rock">Rock</label>
-            <div class="hand rock" id="rock"></div>
+    <div class="container">
+        <div class="select py-3">
+            <h3 class="mb-0">Choose Your Hand</h3>
+            <div class="hand_container_parent d-flex justify-content-evenly mt-2 mt-lg-3">
+                <div class="hand_container ">
+                    <label for="rock d-block">Rock</label>
+                    <div class="hand rock d-block" id="rock"></div>
+                </div>
+
+                <div class="hand_container">
+                    <label for="paper d-block">Paper</label>
+                    <div class="hand paper d-block" id="paper"></div>
+                </div>
+
+                <div class="hand_container">
+                    <label for="scissors d-block">Scissors</label>
+                    <div class="hand scissors d-block" id="scissors"></div>
+                </div>
+            </div>
         </div>
 
-        <div class="hand_container">
-            <label for="paper">Paper</label>
-            <div class="hand paper" id="paper"></div>
+        <div class="set py-3">
+            <div class="play_container me-3 me-lg-5">
+                <p>Player</p>
+                <div id="playerHand"></div>
+            </div>
+            <div class="play_container ms-3 ms-lg-5">
+                <p>Computer</p>
+                <div id="compHand"></div>
+            </div>
         </div>
 
-        <div class="hand_container">
-            <label for="scissors">Scissors</label>
-            <div class="hand scissors" id="scissors"></div>
-        </div>
+        <div id="result"></div>
+
+        <button>Play Again</button>
     </div>
-
-    <div class="set">
-        <div class="play_container">
-            <p>Player</p>
-            <div id="playerHand"></div>
-        </div>
-        <div class="play_container">
-            <p>Computer</p>
-            <div id="compHand"></div>
-        </div>
-    </div>
-
-    <div id="result"></div>
-
-    <button>Play Again</button>
 
     <script>
         const choice = ["rock", "paper", "scissors"];
